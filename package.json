@@ -7,7 +7,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watchAll",
     "preproduction": "git checkout master && git pull",
-    "production": "np --no-publish --yolo"
+    "production": "np --yolo"
   },
   "keywords": [
     "scraping"

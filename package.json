@@ -1,0 +1,25 @@
+{
+  "name": "html-to-json-data",
+  "version": "0.0.0",
+  "description": "Extract data from an HTML page",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "test:watch": "jest --watchAll",
+    "preproduction": "git checkout master && git pull",
+    "production": "np --no-publish --yolo"
+  },
+  "keywords": [
+    "scraping"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.0.1",
+    "jest-cli": "^23.0.1",
+    "np": "^3.0.1"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}

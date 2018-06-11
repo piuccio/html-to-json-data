@@ -34,9 +34,18 @@ exports.number = select(asText, (text) => Number(text) || 0);
 });
 
 /**
- * Logically group nested selectors
+ * Logically group nested selectors.
+ * Returns a function that can be used as is, or calling `.slice()`
+ * to limit the number of results
  */
-exports.group = (selector, template) => ($, iterate) => [$(selector), iterate(template)];
+exports.group = (selector, template) => {
+  const groupFn = ($, iterate) => [$(selector), iterate(template)];
+  groupFn.slice = (...args) => {
+    const applySlice = (list = []) => list.slice(...args);
+    return ($, iterate) => [$(selector), iterate(template), applySlice];
+  };
+  return groupFn;
+};
 
 function select(...fns) {
   const resultSelector = (transform) => (selector, ...args) => ($) => [

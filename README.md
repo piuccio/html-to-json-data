@@ -118,3 +118,8 @@ For instance in `<div data-apple-color="pink" />`, the definition `data('div', '
 The selectors inside `definitions` are scoped inside `selector`.
 
 For instance `group('li', { title: text('h3') })` returns an array of objects with `title` extracted from `li h3`.
+
+If you need to filter out some elements from the list but the CSS selector in not powerful enough you can use
+`group('table tr', {}).slice(1, -1)`.
+
+`slice` works exactly like [`Array.prototype.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).

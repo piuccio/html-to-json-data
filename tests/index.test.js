@@ -22,4 +22,19 @@ describe('Extract data from HTML pages', () => {
     };
     expect(extract(html, template)).toEqual(json);
   });
+
+  it('allows to slice groups when CSS is not enough', () => {
+    const html = readFile('../samples/github-piuccio-repositories.html');
+
+    const template = {
+      repos: group('#user-repositories-list li', {
+        name: text('h3'),
+      }).slice(1, 2),
+    };
+    expect(extract(html, template)).toEqual({
+      repos: [{
+        name: 'cowsay',
+      }],
+    });
+  })
 });

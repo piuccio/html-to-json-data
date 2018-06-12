@@ -30,7 +30,7 @@ exports.number = select(asText, (text) => Number(text) || 0);
  * converts it to absolute using the base URI
  */
 ['href', 'src'].forEach((name) => {
-  exports[name] = select((node, base) => url.resolve(base, node.attr(name)));
+  exports[name] = select((node, base) => url.resolve(base, node.attr(name) || ''));
 });
 
 /**

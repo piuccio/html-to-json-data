@@ -123,3 +123,14 @@ If you need to filter out some elements from the list but the CSS selector in no
 `group('table tr', {}).slice(1, -1)`.
 
 `slice` works exactly like [`Array.prototype.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).
+
+If you need to access the element selected by `group` selector in a nested definition you can use the special selector `:self`.
+
+For instance
+
+```js
+group('select option', {
+  value: attr(':self', 'value'),
+  name: text(':self'),
+});
+```

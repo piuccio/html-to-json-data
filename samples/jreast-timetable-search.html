@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="robots" content="index,nofollow">
+<meta name="description" content="JR東日本の駅の時刻表についてご案内しています。">
+<meta name="keywords" content="ダイヤ,時刻,運転日,電車">
+<title>時刻表　検索結果：JR東日本</title>
+<!-- 個別CSS -->
+<link rel="stylesheet" type="text/css" href="/css/top/jikoku.css">
+<!-- 共有CSS -->
+<link rel="SHORTCUT ICON" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/general/css/import.css">
+<!-- 共有JS -->
+<script type="text/javascript" src="/general/js/jQuery.js"></script>
+<script type="text/javascript" src="/general/js/common.js"></script>
+<!-- 個別JS -->
+<script type="text/javascript" src="/js/searchbox.js"></script>
+<script type="text/javascript" src="/announce.js"></script>
+<script type="text/javascript">
+<!--
+$(document).ready(function(){
+announce_INIT('/','','st_search',0,0,0,'');
+});
+//-->
+</script>
+</head>
+<body class="ctgRailway sm01_02">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T6RWTC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T6RWTC');</script>
+<!-- End Google Tag Manager -->
+<noscript>
+<div class="noscriptBox">
+<p>当ページでは、JavaScriptを使用しております。<br>
+ご使用のブラウザのJavaScript機能を有効にして、ページを再読込してください。</p>
+</div>
+</noscript>
+<script type="text/javascript" src="/js/jre_smartphone.js"></script>
+<!-- JR東日本共通ヘッダー -->
+<script type="text/javascript" src="/general/js/header.js"></script>
+<!-- /JR東日本共通ヘッダー -->
+<!-- パンくずナビ -->
+<div id="breadClumb">
+<ol class="baseContainer">
+<li><a href="http://www.jreast.co.jp/">JR東日本トップ</a></li>
+<li><a href="http://www.jreast.co.jp/railway/">駅・鉄道／旅行・観光</a></li>
+<li><a href="/index.html">時刻表</a></li>
+<li>検索結果</li>
+</ol>
+<!-- /#breadClumb --></div>
+<div id="contents" class="baseContainer">
+<!-- メインコンテンツ -->
+<div id="main" class="mainCol">
+<div id="reserveBox1"></div>
+<div class="ttlBox">
+<h1><img src="/img/top/ttl_main.gif" width="75" height="24" alt="時刻表"></h1>
+<!-- /.ttlBox --></div>
+<div id="reserveBox2"></div>
+<!--ページタイトル-->
+<div class="resultttlbox">
+<div class="ttlBox">
+<h2><img src="/img/result/ttl_search_result.gif" width="84" height="19" alt="検索結果"></h2>
+</div>
+</div>
+<!--結果テーブル-->
+<div class="resulttable">
+<table class="result_01">
+<tbody>
+<tr>
+<th class="eki">駅名</th><th class="token">都県名</th><th class="rosen">路線名</th>
+</tr>
+<tr>
+<td colspan="3" class="message">ご指定の条件にあう駅は見つかりませんでした</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--/結果テーブル-->
+<!--駅名から検索-->
+<div class="rowContainer selectArea">
+<div class="station">
+<div class="ttlBox">
+<h2><img src="/img/top/ttl_station_search.gif" width="119" height="19" alt="駅名から検索"></h2>
+<!-- /.ttlBox --></div>
+<div class="inrBox baseBg bk">
+<!--<form action="http://www.jreast.co.jp/estation/result.aspx" method="get" name="form1" id="stationsearch" class="searchArea">-->
+<form action="/cgi-bin/st_search.cgi" method="get" name="form1" id="stationsearch" class="searchArea">
+<input name="mode" value="0" type="hidden">
+<input type="text" name="ekimei" id="station" class="water searchBox" value="「駅」を除く漢字、ひらがな、カタカナで入力" title="「駅」を除く漢字、ひらがな、カタカナで入力">
+<label for="ekimei"><img src="/img/top/txt-eki.png" width="50" height="30" alt="駅を"></label>
+<input type="image" src="/general/img/common/btn-search.png" alt="検索" title="駅を検索" class="searchBtn">
+</form>
+<h3><img src="/img/top/ttl_serch_manystation.gif" width="426" height="22" alt="検索数の多い駅"></h3>
+<ul class="stationList">
+<li><a href="/timetable/list1039.html" class="arrowLink">東京駅</a></li>
+<li><a href="/timetable/list0913.html" class="arrowLink">仙台駅</a></li>
+<li><a href="/timetable/list0350.html" class="arrowLink">大宮駅</a></li>
+<li><a href="/timetable/list0204.html" class="arrowLink">上野駅</a></li>
+<li><a href="/timetable/list1137.html" class="arrowLink">新潟駅</a></li>
+<li><a href="/timetable/list0866.html" class="arrowLink">新宿駅</a></li>
+<li><a href="/timetable/list0934.html" class="arrowLink">高崎駅</a></li>
+<li><a href="/timetable/list0675.html" class="arrowLink">郡山駅</a></li>
+<li><a href="/timetable/list0248.html" class="arrowLink">宇都宮駅</a></li>
+<li><a href="/timetable/list1565.html" class="arrowLink">盛岡駅</a></li>
+</ul>
+</div>
+<!-- /.station --></div>
+<div class="line">
+<div class="ttlBox">
+<h2><img src="/img/top/ttl_line_serch.gif" width="226" height="19" alt="路線・都県・五十音から検索"></h2>
+<!-- /.ttlBox --></div>
+<div class="inrBox baseBg bk">
+<p class="ta-c"><img src="/img/top/text_line_serch.gif" width="175" height="13" alt="（おわかりになる項目のみ選択）"></p>
+<form action="/cgi-bin/st_search.cgi" method="get">
+<div class="selectRow">
+<p><img src="/img/top/sub_ttl_line.gif" width="42" height="15" alt="路線"></p>
+<div class="selectBox">
+<select name="rosen" id="selectRosen">
+<option value="">選択して下さい</option>
+<option value="1">吾妻線</option>
+<option value="73">秋田新幹線</option>
+<option value="3">左沢線</option>
+<option value="4">飯山線</option>
+<option value="5">石巻線</option>
+<option value="6">五日市線</option>
+<option value="7">伊東線</option>
+<option value="9">羽越本線</option>
+<option value="10">内房線</option>
+<option value="11">越後線</option>
+<option value="12">奥羽本線</option>
+<option value="13">青梅線</option>
+<option value="14">大糸線</option>
+<option value="15">大船渡線</option>
+<option value="16">大湊線</option>
+<option value="17">男鹿線</option>
+<option value="18">鹿島線</option>
+<option value="19">釜石線</option>
+<option value="20">烏山線</option>
+<option value="21">川越線</option>
+<option value="22">北上線</option>
+<option value="23">久留里線</option>
+<option value="24">京浜東北線</option>
+<option value="25">京葉線</option>
+<option value="26">気仙沼線</option>
+<option value="27">小海線</option>
+<option value="28">五能線</option>
+<option value="29">埼京線</option>
+<option value="30">相模線</option>
+<option value="31">篠ノ井線</option>
+<option value="74">上越新幹線</option>
+<option value="32">上越線</option>
+<option value="33">常磐・成田線</option>
+<option value="34">常磐線</option>
+<option value="35">信越本線</option>
+<option value="36">水郡線</option>
+<option value="37">仙山線</option>
+<option value="38">仙石線</option>
+<option value="78">仙石東北ライン</option>
+<option value="39">総武線</option>
+<option value="40">総武線快速</option>
+<option value="41">総武本線</option>
+<option value="42">外房線</option>
+<option value="43">高崎線</option>
+<option value="44">田沢湖線</option>
+<option value="45">只見線</option>
+<option value="46">中央本線</option>
+<option value="47">津軽線</option>
+<option value="48">鶴見線</option>
+<option value="49">東海道本線</option>
+<option value="50">東金線</option>
+<option value="75">東北・北海道新幹線</option>
+<option value="51">東北本線</option>
+<option value="52">成田線</option>
+<option value="53">南武線</option>
+<option value="54">日光線</option>
+<option value="55">根岸線</option>
+<option value="56">白新線</option>
+<option value="57">八高線</option>
+<option value="58">八戸線</option>
+<option value="59">花輪線</option>
+<option value="60">磐越西線</option>
+<option value="61">磐越東線</option>
+<option value="76">北陸新幹線</option>
+<option value="62">水戸線</option>
+<option value="63">武蔵野線</option>
+<option value="64">弥彦線</option>
+<option value="77">山形新幹線</option>
+<option value="65">山田線</option>
+<option value="66" selected>山手線</option>
+<option value="67">横須賀線</option>
+<option value="68">横浜線</option>
+<option value="69">米坂線</option>
+<option value="70">陸羽西線</option>
+<option value="71">陸羽東線</option>
+<option value="72">両毛線</option>
+</select>
+</div>
+</div>
+<div class="selectRow">
+<p><img src="/img/top/sub_ttl_pref.gif" width="42" height="15" alt="都県"></p>
+<div class="selectBox">
+<select name="token" id="selectToken">
+<option value="">選択して下さい</option>
+<option value="13">東京都</option>
+<option value="12">千葉県</option>
+<option value="11" selected>埼玉県</option>
+<option value="14">神奈川県</option>
+<option value="19">山梨県</option>
+<option value="10">群馬県</option>
+<option value="22">静岡県</option>
+<option value="8">茨城県</option>
+<option value="9">栃木県</option>
+<option value="20">長野県</option>
+<option value="15">新潟県</option>
+<option value="7">福島県</option>
+<option value="6">山形県</option>
+<option value="4">宮城県</option>
+<option value="5">秋田県</option>
+<option value="3">岩手県</option>
+<option value="2">青森県</option>
+</select>
+</div>
+</div>
+<div class="selectRow">
+<p><img src="/img/top/sub_ttl_gojyuon.gif" width="42" height="15" alt="五十音"></p>
+<div class="selectBox">
+<select name="50on" id="select50on">
+<option value="">選択して下さい</option>
+<option>あ</option>
+<option>い</option>
+<option>う</option>
+<option>え</option>
+<option>お</option>
+<option>か</option>
+<option>き</option>
+<option>く</option>
+<option>け</option>
+<option>こ</option>
+<option>さ</option>
+<option>し</option>
+<option>す</option>
+<option>せ</option>
+<option>そ</option>
+<option>た</option>
+<option>ち</option>
+<option>つ</option>
+<option>て</option>
+<option>と</option>
+<option>な</option>
+<option>に</option>
+<option>ぬ</option>
+<option>ね</option>
+<option>の</option>
+<option>は</option>
+<option>ひ</option>
+<option>ふ</option>
+<option>へ</option>
+<option>ほ</option>
+<option>ま</option>
+<option>み</option>
+<option>む</option>
+<option>め</option>
+<option>も</option>
+<option>や</option>
+<option>ゆ</option>
+<option>よ</option>
+<option>ら</option>
+<option>り</option>
+<option>る</option>
+<option>れ</option>
+<option>ろ</option>
+<option>わ</option>
+</select>
+</div>
+</div>
+<p class="btnSearch"><input type="image" src="/general/img/common/btn-search.png" alt="検索" title="駅を検索" class="searchBtn"></p>
+</form>
+</div>
+<!-- /.line --></div>
+<!-- /.searchBox --></div>
+<!--/駅名から検索-->
+<div class="note">
+<div class="ttlBox">
+<h2><img src="/img/top/ttl_note.gif" width="89" height="22" alt="ご注意"></h2>
+<!-- /.ttlBox --></div>
+<div class="textBox">
+</div>
+<!-- /.note --></div>
+<div id="reserveBox3"></div>
+<!-- /#main --></div>
+<!-- /メインコンテンツ -->
+<!-- サイドバー -->
+<div id="side" class="sideCol">
+<script type="text/javascript" src="/general/js/localnav.js"></script>
+<!-- /#side --></div>
+<!-- / サイドバー -->
+<p class="jikokutop"><span><a href="/index.html">時刻表のトップへ戻る</a></span></p>
+<p class="pagetop"><span><a href="#pagetop">ページの先頭へ</a></span></p>
+<!-- /#contents --></div>
+<!-- JR東日本共通フッター -->
+<script type="text/javascript" src="/general/js/footer.js"></script>
+<noscript>
+<div class="noscriptBox">
+<p>｜<a href="http://www.jreast.co.jp/">JR東日本トップ</a>｜<a href="http://www.jreast.co.jp/site/">サイトマップ</a>｜</p>
+</div>
+</noscript>
+<!-- /JR東日本共通フッター -->
+</body>
+</html>

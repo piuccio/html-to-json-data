@@ -20,7 +20,9 @@ function processTemplate($, context, template) {
 
   Object.keys(template).forEach((key) => {
     if (typeof template[key] === 'function') {
-      const [node, getValue, transform = identity] = template[key]((selector) => $(selector, context), iterate);
+      const definitionImplementationFn = template[key];
+      const selectorFn = (selectorString) => selectorString === ':self' ? $(context) : $(selectorString, context);
+      const [node, getValue, transform = identity] = definitionImplementationFn(selectorFn, iterate);
       const result = node.length > 1 ? node.map((i, el) => getValue($(el))).get() : getValue($(node));
       extracted[key] = transform(result);
     } else {

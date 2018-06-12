@@ -1,0 +1,22 @@
+module.exports = {
+  formUrl: '/cgi-bin/st_search.cgi',
+  prefectures: [
+    { value: '13', name: '東京都' },
+    { value: '12', name: '千葉県' },
+    { value: '11', name: '埼玉県' },
+    { value: '14', name: '神奈川県' },
+    { value: '19', name: '山梨県' },
+    { value: '10', name: '群馬県' },
+    { value: '22', name: '静岡県' },
+    { value: '8', name: '茨城県' },
+    { value: '9', name: '栃木県' },
+    { value: '20', name: '長野県' },
+    { value: '15', name: '新潟県' },
+    { value: '7', name: '福島県' },
+    { value: '6', name: '山形県' },
+    { value: '4', name: '宮城県' },
+    { value: '5', name: '秋田県' },
+    { value: '3', name: '岩手県' },
+    { value: '2', name: '青森県' },
+  ],
+};

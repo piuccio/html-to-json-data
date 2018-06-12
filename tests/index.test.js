@@ -1,5 +1,5 @@
 const extract = require('../index');
-const { group, text, number, href, src, uniq } = require('../definitions');
+const { group, text, number, href, src, uniq, attr } = require('../definitions');
 
 const { readFile } = require('./help');
 
@@ -36,5 +36,19 @@ describe('Extract data from HTML pages', () => {
         name: 'cowsay',
       }],
     });
-  })
+  });
+
+  it('extract data from a form element', () => {
+    const html = readFile('../samples/jreast-timetable-search.html');
+    const json = require('../samples/jreast-timetable-search.js');
+
+    const template = {
+      formUrl: attr('.line form', 'action'),
+      prefectures: group('#selectToken option', {
+        name: text(':self'),
+        value: attr(':self', 'value'),
+      }).slice(1),
+    };
+    expect(extract(html, template)).toEqual(json);
+  });
 });

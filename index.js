@@ -4,7 +4,9 @@ const identity = (x) => x;
 
 module.exports = (html, template) => {
   const $ = cheerio.load(html);
-  return processTemplate($, undefined, template);
+  const usesRootGroup = typeof template === 'function';
+  const processed = processTemplate($, undefined, usesRootGroup ? { root: template } : template);
+  return usesRootGroup ? processed.root : processed;
 };
 
 /**

@@ -39,12 +39,30 @@ exports.number = select(asText, (text) => Number(text) || 0);
  * to limit the number of results
  */
 exports.group = (selector, template) => {
-  const groupFn = ($, iterate) => [$(selector), iterate(template)];
-  groupFn.slice = (...args) => {
-    const applySlice = (list = []) => list.slice(...args);
-    return ($, iterate) => [$(selector), iterate(template), applySlice];
-  };
-  return groupFn;
+  const reducers = [];
+  const filters = [];
+  function withInterface(fn) {
+    fn.slice = (...args) => {
+      reducers.push((list) => list.slice(...args));
+      return fn;
+    };
+    fn.flat = () => {
+      reducers.push((list) => list.reduce((acc, val) => acc.concat(val), []));
+      return fn;
+    };
+    fn.filterBy = (filterDefinition, filterFn) => {
+      filters.push((applyDefinition) => filterFn(applyDefinition(filterDefinition)));
+      return fn;
+    };
+    return fn;
+  }
+  function applyReducers(list = []) {
+    return reducers.reduce((prevResult, reducer) => reducer(prevResult), list);
+  }
+  function applyFilters(applyDefinition) {
+    return filters.reduce((prevResult, filter) => prevResult && filter(applyDefinition), true);
+  }
+  return withInterface(($, iterate) => [$(selector), iterate(template), applyReducers, applyFilters]);
 };
 
 function select(...fns) {

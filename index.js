@@ -17,20 +17,34 @@ function processTemplate($, context, template) {
 
   // Allow to iterate on a list of element changing context
   function iterate(nestedTemplate) {
-    return (nestenestedContext) => nestenestedContext.map((i, node) => processTemplate($, node, nestedTemplate)).get();
+    const usesRootGroup = typeof nestedTemplate === 'function';
+    return (nestedContext, filter) => {
+      const nestedProcessDefinition = createDefinitionProcessor($, nestedContext, iterate);
+      return nestedContext
+        .filter((i, node) => filter(nestedProcessDefinition))
+        .map((i, node) => processTemplate($, node, usesRootGroup ? { root: nestedTemplate } : nestedTemplate))
+        .get()
+        .map(usesRootGroup ? (value) => value.root : identity);
+    };
   }
 
+  const processDefinition = createDefinitionProcessor($, context, iterate);
   Object.keys(template).forEach((key) => {
     if (typeof template[key] === 'function') {
-      const definitionImplementationFn = template[key];
-      const selectorFn = (selectorString) => selectorString === ':self' ? $(context) : $(selectorString, context);
-      const [node, getValue, transform = identity] = definitionImplementationFn(selectorFn, iterate);
-      const result = node.length > 1 ? node.map((i, el) => getValue($(el))).get() : getValue($(node));
-      extracted[key] = transform(result);
+      extracted[key] = processDefinition(template[key]);
     } else {
       extracted[key] = template[key];
     }
   });
 
   return extracted;
+}
+
+function createDefinitionProcessor($, context, iterate) {
+  return (definition) => {
+    const selectorFn = (selectorString) => selectorString === ':self' ? $(context) : $(selectorString, context);
+    const [node, getValue, transform = identity, filter = identity] = definition(selectorFn, iterate);
+    const result = node.length > 1 ? node.map((i, el) => getValue($(el), filter)).get() : getValue($(node), filter);
+    return transform(result, $, iterate);
+  };
 }

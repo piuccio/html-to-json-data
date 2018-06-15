@@ -119,11 +119,6 @@ The selectors inside `definitions` are scoped inside `selector`.
 
 For instance `group('li', { title: text('h3') })` returns an array of objects with `title` extracted from `li h3`.
 
-If you need to filter out some elements from the list but the CSS selector in not powerful enough you can use
-`group('table tr', {}).slice(1, -1)`.
-
-`slice` works exactly like [`Array.prototype.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).
-
 If you need to access the element selected by `group` selector in a nested definition you can use the special selector `:self`.
 
 For instance
@@ -134,3 +129,72 @@ group('select option', {
   name: text(':self'),
 });
 ```
+
+`definitions` can be either an Object with nested data or any other definition provided by the library, for instance
+
+```js
+group('table tr', text('td:first-child'));
+```
+
+The selector above returns an array of String extracted from the first `td` from every table row.
+
+The `group` function exposes the following function that can be chained to manipulate the list of results.
+
+#### group.slice
+
+If you need to filter out some elements from the list but the CSS selector in not powerful enough you can use
+`group('table tr', {}).slice(1, -1)`.
+
+`slice` works exactly like [`Array.prototype.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).
+
+
+#### group.flat
+
+When your selectors return an array, you can flat the list or results calling `group().flat`.
+
+```js
+const html = `
+<table>
+  <tr>
+    <td><a>One</a></td>
+    <td><a>Two</a></td>
+  </tr>
+  <tr>
+    <td><a>Thre</a></td>
+    <td><a>Four</a></td>
+  </tr>
+</table>
+`;
+group('table tr', text('a')); // [ ['One', 'Two'], ['Three', 'Four'] ]
+group('table tr', text('a')).flat(); // ['One', 'Two', 'Three', 'Four']
+```
+
+
+## group.filterBy
+
+Allow complex filtering of the selected group nodes.
+
+`filterBy(definition, filterFn)`
+
+```js
+const html =`
+<table>
+  <tr>
+    <td class="price">Free</td>
+    <td class="product">One</td>
+  </tr>
+  <tr>
+    <td class="price">Expensive</td>
+    <td class="product">Two</td>
+  </tr>
+</table>
+`;
+
+group('table tr', text('.product')).filterBy(text('.price'), (price) => price === 'Free')
+// -> ['One']
+```
+
+The arguments of `filterBy` are
+
+* `definition` any definition that selects a value from the group node
+* `filterFn` gets called with the result of `definition`, Return `true` to keep the value or `false` to skip it.

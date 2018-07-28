@@ -170,7 +170,7 @@ group('table tr', text('a')).flat(); // ['One', 'Two', 'Three', 'Four']
 ```
 
 
-## group.filterBy
+#### group.filterBy
 
 Allow complex filtering of the selected group nodes.
 
@@ -198,3 +198,27 @@ The arguments of `filterBy` are
 
 * `definition` any definition that selects a value from the group node
 * `filterFn` gets called with the result of `definition`, Return `true` to keep the value or `false` to skip it.
+
+
+#### Selector as a function
+
+If the combination of CSS selectors and `filterBy` is not enough you can use a functions instead of a CSS selector string as first argument.
+
+```js
+const html =`
+<table>
+  <tr>
+    <td class="price">Free</td>
+    <td class="product">One</td>
+  </tr>
+  <!-- more rows ... -->
+</table>
+`;
+
+const selector = ($) => $('table').filter((i, table) => $(table).children().length > 5).find('tr');
+group(selector, text('.product'));
+```
+
+The above selector will iterate over all the table in the page and return all the `tr` included in tables with at least 5 rows.
+
+The selector function receive as argument a [cheerio](https://github.com/cheeriojs/cheerio) object, refer to the documentation for advanced usage.

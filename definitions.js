@@ -37,6 +37,9 @@ exports.number = select(asText, (text) => Number(text) || 0);
  * Logically group nested selectors.
  * Returns a function that can be used as is, or calling `.slice()`
  * to limit the number of results
+ *
+ * `selector` can either be a string or a function that will be called with
+ * - $, cheerio node (root, or the current scoped group)
  */
 exports.group = (selector, template) => {
   const reducers = [];
@@ -62,7 +65,8 @@ exports.group = (selector, template) => {
   function applyFilters(applyDefinition) {
     return filters.reduce((prevResult, filter) => prevResult && filter(applyDefinition), true);
   }
-  return withInterface(($, iterate) => [$(selector), iterate(template), applyReducers, applyFilters]);
+  const selectorFn = typeof selector === 'string' ? ($) => $(selector) : selector;
+  return withInterface(($, iterate) => [selectorFn($), iterate(template), applyReducers, applyFilters]);
 };
 
 function select(...fns) {

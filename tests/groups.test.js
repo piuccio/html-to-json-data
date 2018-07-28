@@ -36,4 +36,22 @@ describe('Groups data', () => {
       .slice(0, 5);
     expect(extract(html, template)).toEqual(earlyMorning);
   });
+
+  it('allows to have functions as selectors', () => {
+    const html = readFile('../samples/github-piuccio-repositories.html');
+    const json = require('../samples/github-piuccio-repositories.js');
+
+    // Find all the one that start with 'n'
+    const selector = ($) => $('#user-repositories-list').find('li').filter((i, node) => {
+      const name = $(node).find('h3');
+      return name.text().trim().charAt(0).toLowerCase() === 'n';
+    });
+    const template = group(selector, {
+      name: text('h3'),
+      link: href('h3 a', 'https://github.com'),
+      stars: number('a[href$="stargazers"]'),
+    });
+    const reposInN = json.repos.filter((repo) => repo.name.toLowerCase().startsWith('n'));
+    expect(extract(html, template)).toEqual(reposInN);
+  });
 });

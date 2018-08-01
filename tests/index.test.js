@@ -51,4 +51,31 @@ describe('Extract data from HTML pages', () => {
     };
     expect(extract(html, template)).toEqual(json);
   });
+
+  it('allows to have definitions in a nested object', () => {
+    const html = readFile('../samples/github-piuccio-repositories.html');
+
+    const template = {
+      stats: {
+        total: number('a[title="Repositories"] .Counter'),
+      },
+      repos: group('#user-repositories-list li', {
+        details: {
+          name: text('h3'),
+          author: 'piuccio',
+        },
+      }).slice(1, 2),
+    };
+    expect(extract(html, template)).toEqual({
+      stats: {
+        total: 43,
+      },
+      repos: [{
+        details: {
+          name: 'cowsay',
+          author: 'piuccio',
+        },
+      }],
+    });
+  });
 });

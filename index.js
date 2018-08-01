@@ -32,6 +32,8 @@ function processTemplate($, context, template) {
   Object.keys(template).forEach((key) => {
     if (typeof template[key] === 'function') {
       extracted[key] = processDefinition(template[key]);
+    } else if (typeof template[key] === 'object') {
+      extracted[key] = processTemplate($, context, template[key]);
     } else {
       extracted[key] = template[key];
     }

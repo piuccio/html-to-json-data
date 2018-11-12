@@ -58,6 +58,17 @@ The functions exported by `html-to-json-data/definitions` allow to select data f
 
 They all take a selector as first parameter. Any selector that is valid for [cheerio](https://github.com/cheeriojs/cheerio#-selector-context-root-) will work.
 
+- [text](#text)
+- [uniq](#uniq)
+- [number](#number)
+- [attr](#attr)
+- [href](#href)
+- [src](#src)
+- [prop](#prop)
+- [data](#data)
+- [input](#input)
+- [group](#group)
+
 
 ### text
 
@@ -109,6 +120,13 @@ For instance in `<input type="checbox" />`, the definition `prop('input', 'check
 `data(selector, name)` similar to `attr` but returns the data attribute.
 
 For instance in `<div data-apple-color="pink" />`, the definition `data('div', 'apple-color')` will return `pink`.
+
+
+### input
+
+`input(selector)` is a utility method to extract the data of a form input.
+
+For instance in `<input type="radio" name="gender" value="fluid">` it'll return `{ type: 'radio', name: 'gender', value: 'fluid' }`.
 
 
 ### group

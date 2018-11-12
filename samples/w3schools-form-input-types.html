@@ -1,0 +1,1576 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>HTML Input Types</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="HTML,CSS,JavaScript,SQL,PHP,jQuery,XML,DOM,Bootstrap,Python,Web development,W3C,tutorials,programming,training,learning,quiz,primer,lessons,references,examples,exercises,source code,colors,demos,tips">
+<meta name="Description" content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, and XML.">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/w3css/4/w3.css">
+<style>
+a:hover,a:active{color:#4CAF50}
+table.w3-table-all{margin:20px 0}
+/*OPPSETT AV TOP, TOPNAV, SIDENAV, MAIN, RIGHT OG FOOTER:*/
+.top {
+position:relative;
+background-color:#ffffff;
+height:68px;
+padding-top:20px;
+line-height:50px;
+overflow:hidden;
+z-index:2;
+}
+.w3schools-logo {
+font-family:fontawesome;
+text-decoration:none;
+line-height:1;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+font-size:37px;
+letter-spacing:3px;
+color:#555555;
+display:block;
+position:absolute;
+top:17px;
+}
+.w3schools-logo .dotcom {color:#4CAF50}
+.topnav {
+position:relative;
+z-index:2;
+font-size:17px;
+background-color:#5f5f5f;
+color:#f1f1f1;
+width:100%;
+padding:0;
+letter-spacing:1px;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+.topnav a{
+padding:10px 15px 9px 15px !important;
+}
+.topnav .w3-bar a:hover,.topnav .w3-bar a:focus{
+background-color:#000000 !important;
+color:#ffffff !important;
+}
+.topnav .w3-bar a.active {
+background-color:#4CAF50;
+color:#ffffff;
+}
+a.topnav-icons {
+width:52px !important;
+font-size:20px !important;
+padding-top:11px !important;
+padding-bottom:13px !important;
+}
+a.topnav-icons.fa-home {font-size:22px !important}
+a.topnav-icons.fa-menu {font-size:22px !important}
+a.topnav-localicons {
+font-size:20px !important;
+padding-top:6px !important;
+padding-bottom:12px !important;
+}
+i.fa-caret-down,i.fa-caret-up{width:10px}
+#sidenav h2 {
+font-size:21px;
+padding-left:16px;
+margin:-4px 0 4px 0;
+width:204px;
+}
+#sidenav a {font-family:"Segoe UI",Arial,sans-serif;text-decoration:none;display:block;padding:2px 1px 1px 16px}
+#sidenav a:hover,#sidenav a:focus {color:#000000;background-color:#cccccc;}
+#sidenav a.active {background-color:#4CAF50;color:#ffffff}
+#leftmenuinner {
+position:fixed;
+top:0;
+padding-top:112px;
+padding-bottom:0;
+height:100%;
+width:220px;
+background-color:transparent;
+}
+#leftmenuinnerinner {
+height:100%;
+width:100%;
+overflow-y:scroll;
+overflow-x:hidden;
+padding-top:20px;
+}
+#main {padding:16px}
+#mainLeaderboard {height:90px}
+#right {text-align:center;padding:16px 16px 0 0}
+#right a {text-decoration:none}
+#right a:hover {text-decoration:underline}
+#skyscraper {min-height:600px}
+.sidesection {margin-bottom:32px;}
+.bottomad {padding:0 16px 16px 0;float:left;width:auto;}
+.footer a {text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+#nav_tutorials,#nav_references,#nav_examples{-webkit-overflow-scrolling:touch;overflow:auto;}
+#nav_tutorials::-webkit-scrollbar,#nav_references::-webkit-scrollbar,#nav_examples::-webkit-scrollbar {width: 12px;}
+#nav_tutorials::-webkit-scrollbar-track,#nav_references::-webkit-scrollbar-track,#nav_examples::-webkit-scrollbar-track {background:#555555;}
+#nav_tutorials::-webkit-scrollbar-thumb,#nav_references::-webkit-scrollbar-thumb,#nav_examples::-webkit-scrollbar-thumb {background: #999999;}
+#nav_tutorials,#nav_references,#nav_examples {
+display:none;
+letter-spacing:0;
+margin-top:44px;
+}
+#nav_tutorials a,#nav_references a,#nav_examples a{
+padding:2px 0 2px 6px!important;
+}
+#nav_tutorials a:focus,#nav_references a:focus,#nav_examples a:focus{
+color: #000;
+background-color: #ccc;
+}
+#nav_tutorials h3,#nav_references h3,#nav_examples h3{
+padding-left:6px;
+}
+.ref_overview{display:none}
+.w3-example{background-color:#f1f1f1;padding:0.01em 16px;margin:20px 0;box-shadow:0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important}
+.nextprev a {font-size:17px;border:1px solid #cccccc;}
+.nextprev a:link,.nextprev a:visited {background-color:#ffffff;color:#000000;}
+.w3-example a:focus,.nextprev a:focus{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);}
+.nextprev a.w3-right,.nextprev a.w3-left {background-color:#4CAF50;color:#ffffff;border-color:#4CAF50}
+#w3-exerciseform {background-color:#555555;padding:16px;color:#ffffff;}
+#w3-exerciseform .exercisewindow {background-color:#ffffff;padding:16px;color:#000000;}
+#w3-exerciseform .exerciseprecontainer {background-color:#f1f1f1;padding:16px;font-size:120%;}
+#w3-exerciseform .exerciseprecontainer pre {display: block;}
+#w3-exerciseform .exerciseprecontainer pre input {padding:1px;border: 1px solid transparent;height:1.3em;}
+.w3-theme {color:#fff !important;background-color:#73AD21 !important;background-color:#4CAF50 !important}
+.w3-theme-border {border-color:#4CAF50 !important}
+.sharethis a:hover {color:inherit;}
+.fa-facebook-square,.fa-twitter-square,.fa-google-plus-square {padding:0 8px;}
+.fa-facebook-square:hover, .fa-thumbs-o-up:hover {color:#3B5998;}
+.fa-twitter-square:hover {color:#55acee;}
+.fa-google-plus-square:hover {color:#dd4b39;}
+#google_translate_element img {margin-bottom:-1px;}
+#googleSearch {color:#000000;}
+#googleSearch a {padding:0 !important;}
+.searchdiv {max-width:400px;margin:auto;text-align:left;font-size:16px}
+div.cse .gsc-control-cse, div.gsc-control-cse {background-color:transparent;border:none;padding:6px;margin:0px}
+td.gsc-search-button input.gsc-search-button {background-color:#4CAF50;border-color:#4CAF50}
+td.gsc-search-button input.gsc-search-button:hover {background-color:#46a049;}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button {
+box-sizing:content-box; line-height:normal;}
+.gsc-tabsArea div {overflow:visible;}
+/*"nullstille" w3css:*/
+.w3-main{transition:margin-left 0s;}
+/*"nullstilling" slutt*/
+@media (min-width:1675px) {
+#main {width:79%}
+#right {width:21%}
+}
+@media (max-width:992px) {
+.top {height:100px}
+.top img {display:block;margin:auto;}
+.top .w3schools-logo {position:relative;top:0;width:100%;text-align:center;margin:auto}
+.toptext {width:100%;text-align:center}
+#sidenav {width:260px;}
+#sidenav h2 {font-size:26px;width:100%;}
+#sidenav a {padding:3px 2px 3px 24px;font-size:17px}
+#leftmenuinner {
+box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+overflow:auto;
+-webkit-overflow-scrolling:touch;
+height:100%;
+position:relative;
+width:auto;
+padding-top:0;
+background-color:#f1f1f1;
+}
+#leftmenuinnerinner {overflow-y:scroll}
+.bottomad {float:none;text-align:center}
+#skyscraper {min-height:60px}
+}
+@media screen and (max-width:600px) {
+.top {height:68px}
+.toptext {display:none}
+}
+@font-face {
+font-family:'fontawesome';
+src: url('../lib/fonts/fontawesome.eot?14663396');
+src:url('../lib/fonts/fontawesome.eot?14663396#iefix') format('embedded-opentype'),
+url('../lib/fonts/fontawesome.woff?14663396') format('woff'),
+url('../lib/fonts/fontawesome.ttf?14663396') format('truetype'),
+url('../lib/fonts/fontawesome.svg?14663396#fontawesome') format('svg');
+font-weight:normal;
+font-style:normal;
+}
+.fa {
+display:inline-block;
+font:normal normal normal 14px/1 FontAwesome;
+font-size:inherit;
+text-rendering:auto;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+transform:translate(0, 0);
+}
+.fa-2x {
+ font-size:2em;
+}
+.fa-home:before {content:'\e800';}
+.fa-menu:before {content: '\f0c9';}
+.fa-globe:before {content:'\e801';}
+.fa-search:before {content:'\e802'; }
+.fa-thumbs-o-up:before {content:'\e803';}
+.fa-left-open:before {content:'\e804';}
+.fa-right-open:before {content:'\e805';}
+.fa-facebook-square:before {content:'\e806';}
+.fa-google-plus-square:before {content:'\e807';}
+.fa-twitter-square:before {content:'\e808';}
+.fa-caret-down:before {content:'\e809';}
+.fa-caret-up:before {content:'\e80a';}
+span.marked, span.deprecated {
+ color:#e80000;
+ background-color:transparent;
+}
+.intro {font-size:16px}
+.w3-btn, .w3-btn:link, .w3-btn:visited {color:#FFFFFF;background-color:#4CAF50}
+a.w3-btn[href*="exercise.asp"],a.w3-btn[href*="exercise_js.asp"] {margin:10px 5px 0 0}
+a.btnplayit,a.btnplayit:link,a.btnplayit:visited {background-color:#FFAD33;padding:1px 10px 2px 10px}
+a.btnplayit:hover,a.btnplayit:active {background-color:#ffffff;color:#FFAD33}
+a.btnplayit:hover {box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);}
+a.btnsmall:link,a.btnsmall:visited,a.btnsmall:active,a.btnsmall:hover {
+float:right;padding:1px 10px 2px 10px;font:15px Verdana, sans-serif;}
+a.btnsmall:hover {box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);}
+a.btnsmall:active,a.btnsmall:hover {color:#4CAF50;background-color:#ffffff}
+@media screen and (max-width:700px) {
+#mainLeaderboard {height:60px}
+#div-gpt-ad-1422003450156-0 {float:none;margin-left:auto;margin-right:auto}
+#div-gpt-ad-1422003450156-3 {float:none;margin-left:auto;margin-right:auto}
+}
+@media (max-width:1700px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(17){display:none;}}
+@media (max-width:1600px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(13){display:none;}}
+@media (max-width:1510px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(12){display:none;}}
+@media (max-width:1450px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(11){display:none;}}
+@media (max-width:1330px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(10){display:none;}}
+@media (max-width:1200px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(9){display:none;}}
+@media (max-width:1100px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(8){display:none;}}
+@media (max-width:1000px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(7){display:none;}}
+@media (max-width:992px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(6){display:none;}}
+@media (max-width:930px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(18){display:none;}}
+@media (max-width:800px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(19){display:none;}}
+@media (max-width:650px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(5){display:none;} #topnav .w3-bar:nth-of-type(1) a:nth-of-type(16){display:none;}}
+@media (max-width:460px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(4){display:none;}}
+@media (max-width:400px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(3){display:none;}}
+.w3-note{background-color:#ffffcc;border-left:6px solid #ffeb3b}
+.w3-warning{background-color:#ffdddd;border-left:6px solid #f44336}
+.w3-info{background-color:#ddffdd;border-left:6px solid #4CAF50}
+hr[id^="ez-insert-after-placeholder"] {margin-top: 0;}
+.phonebr {display:none;}
+@media screen and (max-width: 475px) {.phonebr {display:initial;}}
+</style>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-3855518-1', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+
+<script async="async" type="text/javascript" src="//static.h-bid.com/w3schools.com/20180525/snhb-w3schools.min.js"></script>
+<script type='text/javascript'>
+var k42 = false;
+
+k42 = true;
+
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+gads.src = 'https://www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+var snhb = snhb || {}; snhb.queue = snhb.queue || [];
+snhb.options = {
+               logOutputEnabled : false,
+               autoStartAuction: false,
+               gdpr: {
+                     mainGeo: "us",
+                     reconsiderationAppealIntervalSeconds: 0
+                     }
+               };
+
+// GPT slots
+var gptAdSlots = [];
+googletag.cmd.push(function() {
+googletag.pubads().disableInitialLoad();
+googletag.pubads().enableSingleRequest();
+var leaderMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], [320, 50]).
+// Vertical Tablet ad
+addSize([480, 0], [468, 60]).
+// Horizontal Tablet
+addSize([780, 0], [728, 90]).
+// Small Desktop
+addSize([993, 0], [468, 60]).
+// Normal Desktop
+addSize([1150, 0], [728, 90]).
+// Large Desktop and bigger ad
+addSize([1425, 0], [[728, 90], [970, 90]]).build();
+gptAdSlots[0] = googletag.defineSlot('/16833175/MainLeaderboard', [[728, 90], [970, 90]], 'div-gpt-ad-1422003450156-2').
+defineSizeMapping(leaderMapping).addService(googletag.pubads());
+var skyMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], [320, 50]).
+// Tablet ad
+addSize([975, 0], [120, 600]).
+// Desktop
+addSize([1135, 0], [160, 600]).
+// Large Desktop
+addSize([1675, 0], [[160, 600], [300, 600], [300, 1050]]).build();
+gptAdSlots[1] = googletag.defineSlot('/16833175/WideSkyScraper', [[160, 600], [300, 600], [300, 1050]], 'div-gpt-ad-1422003450156-5').
+defineSizeMapping(skyMapping).addService(googletag.pubads());
+var stickyMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], []).
+// Tablet ad
+addSize([975, 0], [120, 600]).
+// Desktop
+addSize([1135, 0], [160, 600]).
+// Large Desktop
+addSize([1675, 0], [[160, 600], [300, 600], [300, 250]]).build();
+gptAdSlots[4] = googletag.defineSlot('/16833175/StickySkyScraper', [[300, 600], [120, 600], [300, 250], [160, 600]], 'div-gpt-ad-1472547360578-0').
+defineSizeMapping(stickyMapping).addService(googletag.pubads());
+var mcontMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], [[300, 250], [336, 280], [320, 50]]).
+// Vertical Tablet ad
+addSize([490, 0], [[300, 250], [336, 280], [468, 60]]).
+// Horizontal Tablet
+addSize([750, 0], [728, 90]).
+// Small Desktop
+addSize([993, 0], [[300, 250], [336, 280], [468, 60]]).
+// Normal Desktop
+addSize([1135, 0], [728, 90]).
+// Large Desktop and bigger ad
+addSize([1440, 0], [[728, 90], [970, 90], [970, 250]]).build();
+gptAdSlots[5] = googletag.defineSlot('/16833175/MidContent', [[300, 250], [336, 280]], 'div-gpt-ad-1493883843099-0').
+defineSizeMapping(mcontMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+var bmrMapping = googletag.sizeMapping().
+// Smaller
+addSize([0, 0], [[300, 250], [336, 280]]).
+// Large Desktop
+addSize([1240, 0], [[300, 250], [336, 280], [970, 250]]).build();
+gptAdSlots[2] = googletag.defineSlot('/16833175/BottomMediumRectangle', [[300, 250], [336, 280], [970, 250]], 'div-gpt-ad-1422003450156-0').
+defineSizeMapping(bmrMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+var rbmrMapping = googletag.sizeMapping().
+// Smaller
+addSize([0, 0], []).
+// Large Desktop
+addSize([975, 0], [[300, 250], [336, 280]]).build();
+gptAdSlots[3] = googletag.defineSlot('/16833175/RightBottomMediumRectangle', [[300, 250], [336, 280]], 'div-gpt-ad-1422003450156-3').
+defineSizeMapping(rbmrMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+googletag.pubads().setTargeting("content",(function () {
+  var folder = location.pathname;
+  folder = folder.replace("/", "");
+  folder = folder.substr(0, folder.indexOf("/"));
+  return folder;
+})()
+);
+snhb.queue.push(function(){
+
+snhb.startAuction(["main_leaderboard", "wide_skyscraper", "bottom_medium_rectangle", "right_bottom_medium_rectangle"]);
+
+});
+googletag.enableServices();
+});
+</script>
+<script src="//static.h-bid.com/gdpr/cmp.stub.js" type="text/javascript"></script>
+<script type='text/javascript'>
+var stickyadstatus = "";
+function fix_stickyad() {
+  document.getElementById("stickypos").style.position = "sticky";
+  var elem = document.getElementById("stickyadcontainer");
+  if (!elem) {return false;}
+  if (document.getElementById("skyscraper")) {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("skyscraper"), "width").replace("px", ""));
+    }
+  else {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("right"), "width").replace("px", ""));
+  }
+  elem.style.width = skyWidth + "px";
+  if (window.innerWidth <= 992) {
+    elem.style.position = "";
+    elem.style.top = stickypos + "px";
+    return false;
+  }
+  var stickypos = document.getElementById("stickypos").offsetTop;
+  var docTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  var adHeight = Number(w3_getStyleValue(elem, "height").replace("px", ""));
+  if (stickyadstatus == "") {
+    if ((stickypos - docTop) < 60) {
+      elem.style.position = "fixed";
+      elem.style.top = "60px";
+      stickyadstatus = "sticky";
+      document.getElementById("stickypos").style.position = "sticky";
+
+    }
+  } else {
+    if ((docTop + 60) - stickypos < 0) {
+      elem.style.position = "";
+      elem.style.top = stickypos + "px";
+      stickyadstatus = "";
+      document.getElementById("stickypos").style.position = "static";
+    }
+  }
+  if (stickyadstatus == "sticky") {
+    if ((docTop + adHeight + 60) > document.getElementById("footer").offsetTop) {
+      elem.style.position = "absolute";
+      elem.style.top = (document.getElementById("footer").offsetTop - adHeight) + "px";
+      document.getElementById("stickypos").style.position = "static";
+    } else {
+        elem.style.position = "fixed";
+        elem.style.top = "60px";
+        stickyadstatus = "sticky";
+        document.getElementById("stickypos").style.position = "sticky";
+    }
+  }
+}
+function w3_getStyleValue(elmnt,style) {
+  if (window.getComputedStyle) {
+    return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+  } else {
+    return elmnt.currentStyle[style];
+  }
+}
+</script>
+<style>
+.html5badge {
+background-image:url('/images/html5_badge20.png');
+background-repeat:no-repeat;
+background-position:right;
+}
+</style>
+</head>
+<body>
+<div class='w3-container top'>
+  <a class='w3schools-logo notranslate' href='//www.w3schools.com'>w3schools<span class='dotcom'>.com</span></a>
+  <div class='w3-right w3-hide-small w3-wide toptext' style="font-family:'Segoe UI',Arial,sans-serif">THE WORLD'S LARGEST WEB DEVELOPER SITE</div>
+</div>
+
+<div style='display:none;position:absolute;z-index:4;right:52px;height:44px;background-color:#5f5f5f;letter-spacing:normal;' id='googleSearch'>
+  <div class='gcse-search'></div>
+</div>
+<div style='display:none;position:absolute;z-index:3;right:111px;height:44px;background-color:#5f5f5f;text-align:right;padding-top:9px;' id='google_translate_element'></div>
+
+<div class='w3-card-2 topnav notranslate' id='topnav'>
+  <div style="overflow:auto;">
+    <div class="w3-bar w3-left" style="width:100%;overflow:hidden;height:44px">
+      <a href='javascript:void(0);' class='topnav-icons fa fa-menu w3-hide-large w3-left w3-bar-item w3-button' onclick='open_menu()' title='Menu'></a>
+      <a href='/default.asp' class='topnav-icons fa fa-home w3-left w3-bar-item w3-button' title='Home'></a>
+      <a class="w3-bar-item w3-button" href='/html/default.asp' title='HTML Tutorial'>HTML</a>
+      <a class="w3-bar-item w3-button" href='/css/default.asp' title='CSS Tutorial'>CSS</a>
+      <a class="w3-bar-item w3-button" href='/js/default.asp' title='JavaScript Tutorial'>JAVASCRIPT</a>
+      <a class="w3-bar-item w3-button" href='/sql/default.asp' title='SQL Tutorial'>SQL</a>
+      <a class="w3-bar-item w3-button" href='/php/default.asp' title='PHP Tutorial'>PHP</a>
+      <a class="w3-bar-item w3-button" href='/bootstrap/default.asp' title='Bootstrap Tutorial'>BOOTSTRAP</a>
+      <a class="w3-bar-item w3-button" href='/howto/default.asp' title='How To'>HOW TO</a>
+      <a class="w3-bar-item w3-button" href='/jquery/default.asp' title='jQuery Tutorial'>JQUERY</a>
+      <a class="w3-bar-item w3-button" href='/w3css/default.asp' title='W3.CSS Tutorial'>W3.CSS</a>
+      <a class="w3-bar-item w3-button" href='/python/default.asp' title='Python Tutorial'>PYTHON</a>
+      <a class="w3-bar-item w3-button" href='/xml/default.asp' title='XML Tutorial'>XML</a>
+      <a class="w3-bar-item w3-button" id='topnavbtn_tutorials' href='javascript:void(0);' onclick='w3_open_nav("tutorials")' title='Tutorials'>MORE <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a>
+      <a href='javascript:void(0);' class='topnav-icons fa w3-right w3-bar-item w3-button' onclick='open_search(this)' title='Search W3Schools'>&#xe802;</a>
+      <a href='javascript:void(0);' class='topnav-icons fa w3-right w3-bar-item w3-button' onclick='open_translate(this)' title='Translate W3Schools'>&#xe801;</a>
+      <a class="w3-bar-item w3-button w3-right" href='/forum/default.asp'>FORUM</a>
+      <a class="w3-bar-item w3-button w3-right" id='topnavbtn_examples' href='javascript:void(0);' onclick='w3_open_nav("examples")' title='Examples'>EXAMPLES <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a>
+      <a class="w3-bar-item w3-button w3-right" id='topnavbtn_references' href='javascript:void(0);' onclick='w3_open_nav("references")' title='References'>REFERENCES <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a>
+    </div>
+    <div id='nav_tutorials' class='w3-bar-block w3-card-2' style="display:none;">
+      <span onclick='w3_close_nav("tutorials")' class='w3-button w3-xlarge w3-right' style="position:absolute;right:0;font-weight:bold;">&times;</span>
+      <div class='w3-row-padding' style="padding:24px 48px">
+        <div class='w3-col l3 m4'>
+          <h3>HTML and CSS</h3>
+          <a class="w3-bar-item w3-button" href='/html/default.asp'>Learn HTML</a>
+          <a class="w3-bar-item w3-button" href='/css/default.asp'>Learn CSS</a>
+          <a class="w3-bar-item w3-button" href='/w3css/default.asp'>Learn W3.CSS</a>
+          <a class="w3-bar-item w3-button" href='/colors/default.asp'>Learn Colors</a>
+          <a class="w3-bar-item w3-button" href='/bootstrap/default.asp'>Learn Bootstrap 3</a>
+          <a class="w3-bar-item w3-button" href='/bootstrap4/default.asp'>Learn Bootstrap 4</a>
+          <a class="w3-bar-item w3-button" href='/graphics/default.asp'>Learn Graphics</a>
+          <a class="w3-bar-item w3-button" href='/icons/default.asp'>Learn Icons</a>
+          <a class="w3-bar-item w3-button" href='/howto/default.asp'>Learn How To</a>
+        </div>
+        <div class='w3-col l3 m4'>
+          <h3>JavaScript</h3>
+          <a class="w3-bar-item w3-button" href='/js/default.asp'>Learn JavaScript</a>
+          <a class="w3-bar-item w3-button" href='/jquery/default.asp'>Learn jQuery</a>
+          <a class="w3-bar-item w3-button" href='/angular/default.asp'>Learn AngularJS</a>
+          <a class="w3-bar-item w3-button" href="/js/js_json_intro.asp">Learn JSON</a>
+          <a class="w3-bar-item w3-button" href='/js/js_ajax_intro.asp'>Learn AJAX</a>
+          <a class="w3-bar-item w3-button" href="/w3js/default.asp">Learn W3.JS</a>
+          <div class="w3-hide-small"><br><br></div>
+        </div>
+        <div class='w3-col l3 m4'>
+          <h3>Server Side</h3>
+          <a class="w3-bar-item w3-button" href='/sql/default.asp'>Learn SQL</a>
+          <a class="w3-bar-item w3-button" href='/php/default.asp'>Learn PHP</a>
+          <a class="w3-bar-item w3-button" href='/python/default.asp'>Learn Python</a>
+          <a class="w3-bar-item w3-button" href='/java/default.asp'>Learn Java</a>
+          <a class="w3-bar-item w3-button" href='/asp/default.asp'>Learn ASP</a>
+          <a class="w3-bar-item w3-button" href='/nodejs/default.asp'>Learn Node.js</a>
+          <a class="w3-bar-item w3-button" href='/nodejs/nodejs_raspberrypi.asp'>Learn Raspberry Pi</a>
+          <h3>Web Building</h3>
+          <a class="w3-bar-item w3-button" href="/w3css/w3css_templates.asp">Web Templates</a>
+          <a class="w3-bar-item w3-button" href='/browsers/default.asp'>Web Statistics</a>
+          <a class="w3-bar-item w3-button" href='/cert/default.asp'>Web Certificates</a>
+          <a class="w3-bar-item w3-button" href='/tryit/default.asp'>Web Editor</a>
+          <a class="w3-bar-item w3-button" href="/whatis/default.asp">Web Development</a>
+        </div>
+        <div class='w3-col l3 m4'>
+          <h3>XML</h3>
+          <a class="w3-bar-item w3-button" href='/xml/default.asp'>Learn XML</a>
+          <a class="w3-bar-item w3-button" href='/xml/ajax_intro.asp'>Learn XML AJAX</a>
+          <a class="w3-bar-item w3-button" href="/xml/dom_intro.asp">Learn XML DOM</a>
+          <a class="w3-bar-item w3-button" href='/xml/xml_dtd_intro.asp'>Learn XML DTD</a>
+          <a class="w3-bar-item w3-button" href='/xml/schema_intro.asp'>Learn XML Schema</a>
+          <a class="w3-bar-item w3-button" href='/xml/xsl_intro.asp'>Learn XSLT</a>
+          <a class="w3-bar-item w3-button" href='/xml/xpath_intro.asp'>Learn XPath</a>
+          <a class="w3-bar-item w3-button" href='/xml/xquery_intro.asp'>Learn XQuery</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div id='nav_references' class='w3-bar-block w3-card-2'>
+      <span onclick='w3_close_nav("references")' class='w3-button w3-xlarge w3-right' style="position:absolute;right:0;font-weight:bold;">&times;</span>
+      <div class='w3-row-padding' style="padding:24px 48px">
+        <div class='w3-col m4'>
+          <h3>HTML</h3>
+          <a class="w3-bar-item w3-button" href='/tags/default.asp'>HTML Tag Reference</a>
+          <a class="w3-bar-item w3-button" href='/tags/ref_eventattributes.asp'>HTML Event Reference</a>
+          <a class="w3-bar-item w3-button" href='/colors/default.asp'>HTML Color Reference</a>
+          <a class="w3-bar-item w3-button" href='/tags/ref_attributes.asp'>HTML Attribute Reference</a>
+          <a class="w3-bar-item w3-button" href='/tags/ref_canvas.asp'>HTML Canvas Reference</a>
+          <a class="w3-bar-item w3-button" href='/graphics/svg_reference.asp'>HTML SVG Reference</a>
+          <a class="w3-bar-item w3-button" href='/graphics/google_maps_reference.asp'>Google Maps Reference</a>
+          <h3>Charsets</h3>
+          <a class="w3-bar-item w3-button" href='/charsets/default.asp'>HTML Character Sets</a>
+          <a class="w3-bar-item w3-button" href='/charsets/ref_html_ascii.asp'>HTML ASCII</a>
+          <a class="w3-bar-item w3-button" href='/charsets/ref_html_ansi.asp'>HTML ANSI</a>
+          <a class="w3-bar-item w3-button" href='/charsets/ref_html_ansi.asp'>HTML Windows-1252</a>
+          <a class="w3-bar-item w3-button" href='/charsets/ref_html_8859.asp'>HTML ISO-8859-1</a>
+          <a class="w3-bar-item w3-button" href='/charsets/ref_html_symbols.asp'>HTML Symbols</a>
+          <a class="w3-bar-item w3-button" href='/charsets/ref_html_utf8.asp'>HTML UTF-8</a>
+        </div>
+        <div class='w3-col m4'>
+          <h3>CSS</h3>
+          <a class="w3-bar-item w3-button" href='/cssref/default.asp'>CSS Reference</a>
+          <a class="w3-bar-item w3-button" href='/cssref/css3_browsersupport.asp'>CSS Browser Support</a>
+          <a class="w3-bar-item w3-button" href='/cssref/css_selectors.asp'>CSS Selector Reference</a>
+          <a class="w3-bar-item w3-button" href='/w3css/w3css_references.asp'>W3.CSS Reference</a>
+          <a class="w3-bar-item w3-button" href='/bootstrap/bootstrap_ref_all_classes.asp'>Bootstrap Reference</a>
+          <a class="w3-bar-item w3-button" href='/icons/icons_reference.asp'>Icon Reference</a>
+          <h3>XML</h3>
+          <a class="w3-bar-item w3-button" href='/xml/dom_nodetype.asp'>XML Reference</a>
+          <a class="w3-bar-item w3-button" href='/xml/dom_http.asp'>XML Http Reference</a>
+          <a class="w3-bar-item w3-button" href='/xml/xsl_elementref.asp'>XSLT Reference</a>
+          <a class="w3-bar-item w3-button" href='/xml/schema_elements_ref.asp'>XML Schema Reference</a>
+        </div>
+        <div class='w3-col m4'>
+          <h3>JavaScript</h3>
+          <a class="w3-bar-item w3-button" href='/jsref/default.asp'>JavaScript Reference</a>
+          <a class="w3-bar-item w3-button" href='/jsref/default.asp'>HTML DOM Reference</a>
+          <a class="w3-bar-item w3-button" href='/jquery/jquery_ref_overview.asp'>jQuery Reference</a>
+          <a class="w3-bar-item w3-button" href='/angular/angular_ref_directives.asp'>AngularJS Reference</a>
+          <a class="w3-bar-item w3-button" href="/w3js/w3js_references.asp">W3.JS Reference</a>
+          <h3>Server Side</h3>
+          <a class="w3-bar-item w3-button" href='/php/php_ref_overview.asp'>PHP Reference</a>
+          <a class="w3-bar-item w3-button" href='/sql/sql_ref_keywords.asp'>SQL Reference</a>
+          <a class="w3-bar-item w3-button" href='/python/python_reference.asp'>Python Reference</a>
+          <a class="w3-bar-item w3-button" href='/asp/asp_ref_response.asp'>ASP Reference</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div id='nav_examples' class='w3-bar-block w3-card-2'>
+      <span onclick='w3_close_nav("examples")' class='w3-button w3-xlarge w3-right' style="position:absolute;right:0;font-weight:bold;">&times;</span>
+      <div class='w3-row-padding' style="padding:24px 48px">
+        <div class='w3-col l3 m6'>
+          <h3>HTML/CSS</h3>
+          <a class="w3-bar-item w3-button" href='/html/html_examples.asp'>HTML Examples</a>
+          <a class="w3-bar-item w3-button" href='/html/html_exercises.asp'>HTML Exercises</a>
+          <a class="w3-bar-item w3-button" href='/css/css_examples.asp'>CSS Examples</a>
+          <a class="w3-bar-item w3-button" href='/css/css_exercises.asp'>CSS Exercises</a>
+          <a class="w3-bar-item w3-button" href='/w3css/w3css_examples.asp'>W3.CSS Examples</a>
+          <a class="w3-bar-item w3-button" href='/w3css/w3css_templates.asp'>W3.CSS Templates</a>
+          <a class="w3-bar-item w3-button" href='/bootstrap/bootstrap_examples.asp'>Bootstrap Examples</a>
+          <a class="w3-bar-item w3-button" href='/howto/default.asp'>How To Examples</a>
+          <a class="w3-bar-item w3-button" href='/graphics/svg_examples.asp'>SVG Examples</a>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>JavaScript</h3>
+          <a class="w3-bar-item w3-button" href='/js/js_examples.asp' target='_top'>JavaScript Examples</a>
+          <a class="w3-bar-item w3-button" href='/js/js_exercises.asp'>JavaScript Exercises</a>
+          <a class="w3-bar-item w3-button" href='/js/js_dom_examples.asp' target='_top'>HTML DOM Examples</a>
+          <a class="w3-bar-item w3-button" href='/jquery/jquery_examples.asp' target='_top'>jQuery Examples</a>
+          <a class="w3-bar-item w3-button" href='/angular/angular_examples.asp' target='_top'>AngularJS Examples</a>
+          <a class="w3-bar-item w3-button" href='/js/js_ajax_examples.asp' target='_top'>AJAX Examples</a>
+          <a class="w3-bar-item w3-button" href="/w3js/w3js_examples.asp" target='_top'>W3.JS Examples</a>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>Server Side</h3>
+          <a class="w3-bar-item w3-button" href='/php/php_examples.asp' target='_top'>PHP Examples</a>
+          <a class="w3-bar-item w3-button" href="/asp/asp_examples.asp" target="_top">ASP Examples</a>
+          <a class="w3-bar-item w3-button" href='/sql/sql_exercises.asp'>SQL Exercises</a>
+          <a class="w3-bar-item w3-button" href='/python/python_exercises.asp'>Python Exercises</a>
+          <h3>XML</h3>
+          <a class="w3-bar-item w3-button" href='/xml/xml_examples.asp' target='_top'>XML Examples</a>
+          <a class="w3-bar-item w3-button" href='/xml/xsl_examples.asp' target='_top'>XSLT Examples</a>
+          <a class="w3-bar-item w3-button" href='/xml/xpath_examples.asp' target='_top'>XPath Examples</a>
+          <a class="w3-bar-item w3-button" href='/xml/schema_example.asp' target='_top'>XML Schema Examples</a>
+          <a class="w3-bar-item w3-button" href='/graphics/svg_examples.asp' target='_top'>SVG Examples</a>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>Quizzes</h3>
+          <a class="w3-bar-item w3-button" href='/quiztest/quiztest.asp?Qtest=HTML' target='_top'>HTML Quiz</a>
+          <a class="w3-bar-item w3-button" href='/quiztest/quiztest.asp?Qtest=CSS' target='_top'>CSS Quiz</a>
+          <a class="w3-bar-item w3-button" href='/quiztest/quiztest.asp?Qtest=JavaScript' target='_top'>JavaScript Quiz</a>
+          <a class="w3-bar-item w3-button" href='/quiztest/quiztest.asp?Qtest=Bootstrap' target='_top'>Bootstrap Quiz</a>
+          <a class="w3-bar-item w3-button" href='/quiztest/quiztest.asp?Qtest=jQuery' target='_top'>jQuery Quiz</a>
+          <a class="w3-bar-item w3-button" href='/quiztest/quiztest.asp?Qtest=PHP' target='_top'>PHP Quiz</a>
+          <a class="w3-bar-item w3-button" href="/quiztest/quiztest.asp?Qtest=SQL" target="_top">SQL Quiz</a>
+          <a class="w3-bar-item w3-button" href='/quiztest/quiztest.asp?Qtest=XML' target='_top'>XML Quiz</a>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div class='w3-sidebar w3-collapse' id='sidenav'>
+  <div id='leftmenuinner'>
+    <div class='w3-light-grey' id='leftmenuinnerinner'>
+      <a href='javascript:void(0)' onclick='close_menu()' class='w3-button w3-hide-large w3-large w3-display-topright' style='right:16px;padding:3px 12px;font-weight:bold;'>&times;</a>
+<h2 class="left"><span class="left_h2">HTML5</span> Tutorial</h2>
+<a target="_top" href="default.asp">HTML HOME</a>
+<a target="_top" href="html_intro.asp">HTML Introduction</a>
+<a target="_top" href="html_editors.asp">HTML Editors</a>
+<a target="_top" href="html_basic.asp">HTML Basic</a>
+<a target="_top" href="html_elements.asp">HTML Elements</a>
+<a target="_top" href="html_attributes.asp">HTML Attributes</a>
+<a target="_top" href="html_headings.asp">HTML Headings</a>
+<a target="_top" href="html_paragraphs.asp">HTML Paragraphs</a>
+<a target="_top" href="html_styles.asp">HTML Styles</a>
+<a target="_top" href="html_formatting.asp">HTML Formatting</a>
+<a target="_top" href="html_quotation_elements.asp">HTML Quotations</a>
+<a target="_top" href="html_comments.asp">HTML Comments</a>
+<a target="_top" href="html_colors.asp">HTML Colors</a>
+<a target="_top" href="html_css.asp">HTML CSS</a>
+<a target="_top" href="html_links.asp">HTML Links</a>
+<a target="_top" href="html_images.asp">HTML Images</a>
+<a target="_top" href="html_tables.asp">HTML Tables</a>
+<a target="_top" href="html_lists.asp">HTML Lists</a>
+<a target="_top" href="html_blocks.asp">HTML Blocks</a>
+<a target="_top" href="html_classes.asp">HTML Classes</a>
+<a target="_top" href="html_id.asp">HTML Id</a>
+<a target="_top" href="html_iframe.asp">HTML Iframes</a>
+<a target="_top" href="html_scripts.asp">HTML JavaScript</a>
+<a target="_top" href="html_filepaths.asp">HTML File Paths</a>
+<a target="_top" href="html_head.asp">HTML Head</a>
+<a target="_top" href="html_layout.asp">HTML Layout</a>
+<a target="_top" href="html_responsive.asp">HTML Responsive</a>
+<a target="_top" href="html_computercode_elements.asp">HTML Computercode</a>
+<a target="_top" href="html_entities.asp">HTML Entities</a>
+<a target="_top" href="html_symbols.asp">HTML Symbols</a>
+<a target="_top" href="html_charset.asp">HTML Charset</a>
+<a target="_top" href="html_urlencode.asp">HTML URL Encode</a>
+<a target="_top" href="html_xhtml.asp">HTML XHTML</a>
+<br>
+<h2 class="left"><span class="left_h2">HTML</span> Forms</h2>
+<a target="_top" href="html_forms.asp">HTML Forms</a>
+<a target="_top" href="html_form_elements.asp">HTML Form Elements</a>
+<a target="_top" href="html_form_input_types.asp">HTML Input Types</a>
+<a target="_top" href="html_form_attributes.asp">HTML Input Attributes</a>
+<br>
+<h2 class="left"><span class="left_h2">HTML5</span></h2>
+<a target="_top" href="html5_intro.asp">HTML5 Intro</a>
+<a target="_top" href="html5_browsers.asp">HTML5 Support</a>
+<a target="_top" href="html5_new_elements.asp">HTML5 New Elements</a>
+<a target="_top" href="html5_semantic_elements.asp">HTML5 Semantics</a>
+<a target="_top" href="html5_migration.asp">HTML5 Migration</a>
+<a target="_top" href="html5_syntax.asp">HTML5 Style Guide</a>
+<br>
+<h2 class="left"><span class="left_h2">HTML</span> Graphics</h2>
+<a target="_top" href="html5_canvas.asp">HTML Canvas</a>
+<a target="_top" href="html5_svg.asp">HTML SVG</a>
+<!--<a target="_top" href="html_googlemaps.asp">HTML Google Maps</a>-->
+<br>
+<h2 class="left"><span class="left_h2">HTML</span> Media</h2>
+<a target="_top" href="html_media.asp">HTML Media</a>
+<a target="_top" href="html5_video.asp">HTML Video</a>
+<a target="_top" href="html5_audio.asp">HTML Audio</a>
+<a target="_top" href="html_object.asp">HTML Plug-ins</a>
+<a target="_top" href="html_youtube.asp">HTML YouTube</a>
+<br>
+<h2 class="left"><span class="left_h2">HTML</span> APIs</h2>
+<a target="_top" href="html5_geolocation.asp">HTML Geolocation</a>
+<a target="_top" href="html5_draganddrop.asp">HTML Drag/Drop</a>
+<a target="_top" href="html5_webstorage.asp">HTML Web Storage</a>
+<a target="_top" href="html5_webworkers.asp">HTML Web Workers</a>
+<a target="_top" href="html5_serversentevents.asp">HTML SSE</a>
+<br>
+<h2 class="left"><span class="left_h2">HTML</span> Examples</h2>
+<a target="_top" href="html_examples.asp">HTML Examples</a>
+<a target="_top" href="html_quiz.asp">HTML Quiz</a>
+<a target="_top" href="html_exercises.asp">HTML Exercises</a>
+<a target="_top" href="html_exam.asp">HTML Certificate</a>
+<a target="_top" href="html_summary.asp">HTML Summary</a>
+<a target="_top" href="html_accessibility.asp">HTML Accessibility</a>
+<br>
+<h2 class="left"><span class="left_h2">HTML</span> References</h2>
+<a target="_top" href="/tags/default.asp">HTML Tag List</a>
+<a target="_top" href="/tags/ref_standardattributes.asp">HTML Attributes</a>
+<a target="_top" href="/tags/ref_eventattributes.asp">HTML Events</a>
+<a target="_top" href="/tags/ref_colornames.asp">HTML Colors</a>
+<a target="_top" href="/tags/ref_canvas.asp">HTML Canvas</a>
+<a target="_top" href="/tags/ref_av_dom.asp">HTML Audio/Video</a>
+<a target="_top" href="/tags/ref_html_dtd.asp">HTML Doctypes</a>
+<a target="_top" href="/tags/ref_charactersets.asp">HTML Character Sets</a>
+<a target="_top" href="/tags/ref_urlencode.asp">HTML URL Encode</a>
+<a target="_top" href="/tags/ref_language_codes.asp">HTML Lang Codes</a>
+<a target="_top" href="/tags/ref_httpmessages.asp">HTTP Messages</a>
+<a target="_top" href="/tags/ref_httpmethods.asp">HTTP Methods</a>
+<a target="_top" href="/tags/ref_pxtoemconversion.asp">PX to EM Converter</a>
+<a target="_top" href="/tags/ref_keyboardshortcuts.asp">Keyboard Shortcuts</a>
+      <br><br>
+    </div>
+  </div>
+</div>
+<div class='w3-main w3-light-grey' id='belowtopnav' style='margin-left:220px;'>
+  <div class='w3-row w3-white'>
+    <div class='w3-col l10 m12' id='main'>
+      <div id='mainLeaderboard' style='overflow:hidden;'>
+        <!-- MainLeaderboard-->
+
+        <!--<pre>main_leaderboard, all: [728,90][970,90][320,50][468,60]</pre>-->
+        <div id="snhb-main_leaderboard-0"></div>
+
+      </div>
+<h1>HTML <span class="color_h1">Input Types</span></h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="html_form_elements.asp">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="html_form_attributes.asp">Next &#10095;</a>
+</div>
+<hr>
+<p>This chapter describes the different input types for the &lt;input&gt; element. </p>
+<hr>
+
+<h2>Input Type Text</h2>
+<p><code class="w3-codespan">&lt;input type=&quot;text&quot;&gt;</code> defines a <strong>one-line text input field</strong>:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;form&gt;<br>
+&nbsp;
+First name:&lt;br&gt;<br>&nbsp; &lt;input type=&quot;text&quot; name=&quot;firstname&quot;&gt;&lt;br&gt;<br>
+&nbsp;
+Last name:&lt;br&gt;<br>&nbsp; &lt;input type=&quot;text&quot; name=&quot;lastname&quot;&gt;<br>
+&lt;/form&gt;
+</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_text" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<p>This is how the HTML code above will be displayed in a browser:</p>
+First name:<br>
+<input type="text"><br>
+Last name:<br>
+<input type="text"><br>
+<hr>
+
+<h2>Input Type Password</h2>
+<p><code class="w3-codespan">&lt;input type=&quot;password&quot;&gt;</code> defines a <strong>password field</strong>:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;form&gt;<br>
+ &nbsp;
+ User name:&lt;br&gt;<br>&nbsp; &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;br&gt;<br>
+ &nbsp;
+ User password:&lt;br&gt;<br>&nbsp; &lt;input type=&quot;password&quot; name=&quot;psw&quot;&gt;<br>
+&lt;/form&gt;
+</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_password" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<p>This is how the HTML code above will be displayed in a browser:</p>
+User name:<br>
+<input type="text"><br>
+User password:<br>
+<input type="password">
+<div class="w3-panel w3-note">
+<p>The characters in a password field are masked (shown as asterisks or circles).
+</p>
+</div>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0"></div>
+
+</div>
+<hr>
+<h2>Input Type Submit</h2>
+<p><code class="w3-codespan">&lt;input type="submit"&gt;</code> defines a button for <strong>
+submitting</strong> form data to a <strong>form-handler</strong>.</p>
+<p>The form-handler is typically a server page with a script for processing
+input data.</p>
+<p>The form-handler is specified in the form's <code class="w3-codespan">action</code>
+attribute:</p>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form action=&quot;/action_page.php&quot;&gt;<br>&nbsp; First name:&lt;br&gt;<br>&nbsp; &lt;input type=&quot;text&quot;
+ name=&quot;firstname&quot; value=&quot;Mickey&quot;&gt;&lt;br&gt;<br>&nbsp; Last name:&lt;br&gt;<br>&nbsp; &lt;input
+ type=&quot;text&quot; name=&quot;lastname&quot; value=&quot;Mouse&quot;&gt;&lt;br&gt;&lt;br&gt;<br>&nbsp; &lt;input type=&quot;submit&quot;
+ value=&quot;Submit&quot;&gt;<br>&lt;/form&gt;
+</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_submit" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<p>This is how the HTML code above will be displayed in a browser:</p>
+<form action="/action_page.php" target="_blank">
+First name:<br>
+<input type="text" name="firstname" value="Mickey"><br>
+Last name:<br>
+<input type="text" name="lastname" value="Mouse">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+<p>If you omit the submit button's value attribute, the button will get a default text:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form action=&quot;/action_page.php&quot;&gt;<br>&nbsp; First name:&lt;br&gt;<br>&nbsp; &lt;input type=&quot;text&quot;
+ name=&quot;firstname&quot; value=&quot;Mickey&quot;&gt;&lt;br&gt;<br>&nbsp; Last name:&lt;br&gt;<br>&nbsp; &lt;input
+ type=&quot;text&quot; name=&quot;lastname&quot; value=&quot;Mouse&quot;&gt;&lt;br&gt;&lt;br&gt;<br>&nbsp; &lt;input type=&quot;submit&quot;&gt;<br>&lt;/form&gt;
+</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_submit_nn" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type Reset</h2>
+<p><code class="w3-codespan">&lt;input type="reset"&gt;</code> defines a <strong>reset button</strong>
+that will reset all form values to their default values:</p>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form action=&quot;/action_page.php&quot;&gt;<br>&nbsp; First name:&lt;br&gt;<br>&nbsp; &lt;input type=&quot;text&quot;
+ name=&quot;firstname&quot; value=&quot;Mickey&quot;&gt;&lt;br&gt;<br>&nbsp; Last name:&lt;br&gt;<br>&nbsp; &lt;input
+ type=&quot;text&quot; name=&quot;lastname&quot; value=&quot;Mouse&quot;&gt;&lt;br&gt;&lt;br&gt;<br>&nbsp; &lt;input type=&quot;submit&quot;
+ value=&quot;Submit&quot;&gt;<br>&nbsp; &lt;input type=&quot;reset&quot;&gt;<br>&lt;/form&gt;
+</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_reset" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<p>This is how the HTML code above will be displayed in a browser:</p>
+<form action="/action_page.php" target="_blank">
+First name:<br>
+<input type="text" name="firstname0" value="Mickey"><br>
+Last name:<br>
+<input type="text" name="lastname0" value="Mouse">
+<br><br>
+<input type="submit" value="Submit">
+<input type="reset">
+</form>
+<div class="w3-note w3-panel">
+<p>If you change the input values and then click the "Reset" button, the form-data will be reset to the default values.</p>
+</div>
+<hr>
+
+<h2>Input Type Radio</h2>
+<p><code class="w3-codespan">&lt;input type=&quot;radio&quot;&gt;</code> defines a <strong>radio button</strong>.</p>
+<p>Radio buttons let a user select ONLY ONE of a limited number of choices:</p>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp; &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;
+ checked&gt; Male&lt;br&gt;<br>&nbsp; &lt;input
+ type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt; Female&lt;br&gt;<br>&nbsp; &lt;input
+ type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;other&quot;&gt; Other<br>&lt;/form&gt;
+</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_radio" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<p>This is how the HTML code above will be displayed in a browser:</p>
+<input type="radio" name="gender" value="V1" checked> Male<br>
+<input type="radio" name="gender" value="V2"> Female<br>
+<input type="radio" name="gender" value="V3"> Other
+<hr>
+
+<h2>Input Type Checkbox</h2>
+<p><code class="w3-codespan">&lt;input type=&quot;checkbox&quot;&gt;</code> defines a <strong>checkbox</strong>.</p>
+<p>Checkboxes let a user select ZERO or MORE options of a limited number of choices.</p>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp; &lt;input type=&quot;checkbox&quot; name=&quot;vehicle1&quot; value=&quot;Bike&quot;&gt; I have a bike&lt;br&gt;<br>
+&nbsp;
+&lt;input type=&quot;checkbox&quot; name=&quot;vehicle2&quot; value=&quot;Car&quot;&gt; I have a car <br>
+ &lt;/form&gt;
+</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_checkbox" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<p>This is how the HTML code above will be displayed in a browser:</p>
+<input type="checkbox" name="vehicle1" value="Bike"> I have a bike
+<br>
+<input type="checkbox" name="vehicle2" value="Car"> I have a car
+<hr>
+
+<h2>Input Type Button</h2>
+<p><code class="w3-codespan">&lt;input type=&quot;button&quot;&gt;</code> defines a <strong>button</strong>:</p>
+<div class="w3-example">
+ <h3>Example</h3>
+ <div class="w3-code notranslate htmlHigh">
+  &lt;input type=&quot;button&quot; onclick=&quot;alert('Hello World!')&quot; value=&quot;Click Me!&quot;&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_button" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<p>This is how the HTML code above will be displayed in a browser:</p>
+<input type="button" onclick="alert('Hello World!')" value="Click Me!">
+<hr>
+
+<h2>HTML5 Input Types</h2>
+<p>HTML5 added several new input types:</p>
+<ul>
+  <li>color</li>
+  <li>date</li>
+  <li>datetime-local</li>
+  <li>email</li>
+  <li>month</li>
+  <li>number</li>
+  <li>range</li>
+  <li>search</li>
+  <li>tel</li>
+  <li>time</li>
+  <li>url</li>
+  <li>week</li>
+</ul>
+<div class="w3-panel w3-note">
+<p>New input types that are not supported by older web browsers, will behave as <code class="w3-codespan">&lt;input type=&quot;text&quot;&gt;</code>.</p>
+</div>
+<hr>
+
+<h2>Input Type Color</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;color&quot;&gt;</code> is used for input fields that should contain a color.</p>
+<p>Depending on browser support, a color picker can show up in the input field.</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/compatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20"
+height="20">
+
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp;
+ Select your favorite color:<br>&nbsp; &lt;input type=&quot;color&quot; name=&quot;favcolor&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_color" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type Date</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;date&quot;&gt;</code> is used for input fields that should contain a date.</p>
+<p>Depending on browser support, a date picker can show up in the input field.</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20"
+height="20">
+
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp;
+ Birthday:<br>&nbsp; &lt;input type=&quot;date&quot; name=&quot;bday&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_date" target="_blank">Try it Yourself &raquo;</a>
+</div>
+
+<p>You can also use the <code class="w3-codespan">min</code> and <code class="w3-codespan">max</code> attributes to add restrictions to dates:</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20"
+height="20">
+
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp; Enter a date before 1980-01-01:<br>&nbsp; &lt;input type="date" name="bday" max="1979-12-31"&gt;&lt;br&gt;<br>&nbsp; Enter a date after 2000-01-01:<br>&nbsp; &lt;input type="date" name="bday" min="2000-01-02"&gt;&lt;br&gt;<br>&lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_date_max_min" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type Datetime-local</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;datetime-local&quot;&gt;</code> specifies
+a date and time input field, with no time zone.</p>
+<p>Depending on browser support, a date picker can show up in the input field.</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20" height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp;
+ Birthday (date and time):<br>&nbsp; &lt;input type=&quot;datetime-local&quot; name=&quot;bdaytime&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_datetime-local" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type Email</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;email&quot;&gt;</code> is used for input fields that should contain an e-mail address.</p>
+<p>Depending on browser support, the e-mail address can be automatically validated when submitted.</p>
+<p>Some smartphones recognize the email type, and adds &quot;.com&quot; to the keyboard to match email input.</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20" height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp;
+ E-mail:<br>&nbsp; &lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_email" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type File</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;file&quot;&gt;</code>
+defines a file-select field and a &quot;Browse&quot; button for file uploads.</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/compatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20" height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+  &lt;form&gt;<br>&nbsp; Select a file: &lt;input type=&quot;file&quot; name=&quot;myFile&quot;&gt;<br>&lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_file" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+
+<h2>Input Type Month</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;month&quot;&gt;</code> allows the user to select a month and year.</p>
+<p>Depending on browser support, a date picker can show up in the input field.</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20" height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp;
+ Birthday (month and year):<br>&nbsp; &lt;input type=&quot;month&quot; name=&quot;bdaymonth&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_month" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type Number</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;number&quot;&gt;</code> defines a <strong>
+numeric</strong> input field.</p>
+<p>You can also set restrictions on what numbers are accepted.</p>
+<p>The following example displays a numeric input field, where you can enter a
+value from 1 to 5:</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/compatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20" height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp;
+ Quantity (between 1 and 5):<br>&nbsp; &lt;input type=&quot;number&quot; name=&quot;quantity&quot; min=&quot;1&quot; max=&quot;5&quot;&gt;<br>&lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_number" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Restrictions</h2>
+<p>Here is a list of some common input restrictions (some are new in HTML5):</p>
+<table class="w3-table-all notranslate">
+<tr>
+<th style="width:20%">Attribute</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>disabled</td>
+<td>Specifies that an input field should be disabled</td>
+</tr>
+<tr>
+<td class="html5badge">max</td>
+<td>Specifies the maximum value for an input field</td>
+</tr>
+<tr>
+<td>maxlength</td>
+<td>Specifies the maximum number of character for an input field</td>
+</tr>
+<tr>
+<td class="html5badge">min</td>
+<td>Specifies the minimum value for an input field</td>
+</tr>
+<tr>
+<td class="html5badge">pattern</td>
+<td>Specifies a regular expression to check the input value against</td>
+</tr>
+<tr>
+<td>readonly</td>
+<td>Specifies that an input field is read only (cannot be changed)</td>
+</tr>
+<tr>
+<td class="html5badge">required</td>
+<td>Specifies that an input field is required (must be filled out)</td>
+</tr>
+<tr>
+<td>size</td>
+<td>Specifies the width (in characters) of an input field</td>
+</tr>
+<tr>
+<td class="html5badge">step</td>
+<td>Specifies the legal number intervals for an input field</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Specifies the default value for an input field</td>
+</tr>
+</table>
+<p>
+You will learn more about input restrictions in the next chapter.</p>
+<p>
+The following example displays a numeric input field, where you can enter a
+value from 0 to 100, in steps of 10. The default value is 30:</p>
+
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/compatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20"
+height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp; Quantity:<br>&nbsp;
+&lt;input type=&quot;number&quot; name=&quot;points&quot;
+min=&quot;0&quot; max=&quot;100&quot; step=&quot;10&quot; value=&quot;30&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_number_step" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type Range</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;range&quot;&gt;</code> defines a control for entering a number whose exact value is not important (like a slider control). Default
+range is 0 to 100. However, you can set restrictions on what
+numbers are accepted with the <code class="w3-codespan">min</code>, <code class="w3-codespan">max</code>, and <code class="w3-codespan">step</code> attributes:</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/compatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20"
+height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+    &lt;form&gt;<br>&nbsp;
+    &lt;input type=&quot;range&quot; name=&quot;points&quot; min=&quot;0&quot; max=&quot;10&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_range" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type Search</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;search&quot;&gt;</code> is used for search fields (a search field behaves like a regular text field).</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/compatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20" height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp;
+ Search Google:<br>&nbsp; &lt;input type=&quot;search&quot; name=&quot;googlesearch&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_search" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type Tel</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;tel&quot;&gt;</code> is used for input fields that should contain a telephone number.</p>
+<p><strong>Note:</strong> The tel type is currently only supported in Safari 8.</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/incompatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/compatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20" height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+    &lt;form&gt;<br>&nbsp;
+    Telephone:<br>&nbsp; &lt;input type=&quot;tel&quot; name=&quot;usrtel&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_tel" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type Time</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;time&quot;&gt;</code> allows the user to select a time (no time zone).</p>
+<p>Depending on browser support, a time picker can show up in the input field.</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20" height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp;
+ Select a time:<br>&nbsp; &lt;input type=&quot;time&quot; name=&quot;usr_time&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_time" target="_blank">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Input Type Url</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;url&quot;&gt;</code> is used for input fields that should contain a URL address.</p>
+<p>Depending on browser support, the url field can be automatically validated
+when submitted.</p>
+<p>Some smartphones recognize the url type, and adds &quot;.com&quot; to the keyboard to match
+url input.</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/compatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/compatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20" height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp;
+ Add your homepage:<br>&nbsp; &lt;input type=&quot;url&quot; name=&quot;homepage&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_url" target="_blank">Try it Yourself &raquo;</a>
+</div>
+
+<hr>
+
+<h2>Input Type Week</h2>
+<p>The <code class="w3-codespan">&lt;input type=&quot;week&quot;&gt;</code> allows the user to select a week and year.</p>
+<p>Depending on browser support, a date picker can show up in the input field.</p>
+<div class="w3-example">
+<img style="float:right;" src="/images/compatible_opera2020.gif" title="Opera" alt="Opera" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_safari2020.gif" title="Safari" alt="Safari" width="20" height="20">
+<img style="float:right;" src="/images/compatible_chrome2020.gif" title="Chrome" alt="Chrome" width="20" height="20">
+<img style="float:right;" src="/images/incompatible_firefox2020.gif" title="Firefox" alt="Firefox" width="20" height="20">
+<img style="float:right;" src="/images/compatible_edge2020.gif" title="Internet Explorer" alt="Internet Explorer" width="20" height="20">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;form&gt;<br>&nbsp;
+ Select a week:<br>&nbsp; &lt;input type=&quot;week&quot; name=&quot;week_year&quot;&gt;<br>
+ &lt;/form&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="tryit.asp?filename=tryhtml_input_week" target="_blank">Try it Yourself &raquo;</a>
+</div>
+
+<hr>
+
+<div class="w3-container w3-dark-grey w3-padding">
+  <h2>Test Yourself with Exercises!</h2>
+  <div class="w3-bar w3-margin-bottom">
+    <a class="w3-bar-item w3-btn" href="exercise.asp?filename=exercise_form_input_types1" target="_blank">Exercise 1 &raquo;</a>
+    <a class="w3-bar-item w3-btn" href="exercise.asp?filename=exercise_form_input_types2" target="_blank">Exercise 2 &raquo;</a>
+    <a class="w3-bar-item w3-btn" href="exercise.asp?filename=exercise_form_input_types3" target="_blank">Exercise 3 &raquo;</a>
+    <a class="w3-bar-item w3-btn" href="exercise.asp?filename=exercise_form_input_types4" target="_blank">Exercise 4 &raquo;</a>
+    <a class="w3-bar-item w3-btn" href="exercise.asp?filename=exercise_form_input_types5" target="_blank">Exercise 5 &raquo;</a>
+  </div>
+</div>
+<hr>
+
+<h2>HTML Input Type Attribute</h2>
+<table class="w3-table-all notranslate">
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><a href="/tags/att_input_type.asp">&lt;input type=&quot;&quot;&gt;</a></td>
+<td>Specifies the input type to display</td>
+</tr>
+</table>
+
+<br>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="html_form_elements.asp">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="html_form_attributes.asp">Next &#10095;</a>
+</div>
+</div>
+<div class="w3-col l2 m12" id="right">
+
+<div class="sidesection">
+  <div id="skyscraper">
+
+    <!--<pre>wide_skyscraper, all: [160,600][300,600][320,50][120,600][300,1050]</pre>-->
+    <div id="snhb-wide_skyscraper-0"></div>
+
+  </div>
+</div>
+
+<div class="sidesection">
+<h4><a href="/colors/colors_picker.asp">COLOR PICKER</a></h4>
+<a href="/colors/colors_picker.asp">
+<img src="/images/colorpicker.gif" alt="colorpicker"></a>
+</div>
+
+<div class="sidesection" id="moreAboutSubject">
+</div>
+
+<div class="sidesection w3-light-grey" style="margin-left:auto;margin-right:auto;max-width:230px">
+<div class="w3-container w3-dark-grey">
+<h4><a href="/howto/default.asp" class="w3-hover-text-white">HOW TO</a></h4>
+</div>
+<div class="w3-container w3-left-align w3-padding-16">
+<a href="/howto/howto_js_tabs.asp">Tabs</a><br>
+<a href="/howto/howto_css_dropdown.asp">Dropdowns</a><br>
+<a href="/howto/howto_js_accordion.asp">Accordions</a><br>
+<a href="/howto/howto_js_sidenav.asp">Side Navigation</a><br>
+<a href="/howto/howto_js_topnav.asp">Top Navigation</a><br>
+<a href="/howto/howto_css_modals.asp">Modal Boxes</a><br>
+<a href="/howto/howto_js_progressbar.asp">Progress Bars</a><br>
+<a href="/howto/howto_css_parallax.asp">Parallax</a><br>
+<a href="/howto/howto_css_login_form.asp">Login Form</a><br>
+<a href="/howto/howto_html_include.asp">HTML Includes</a><br>
+<a href="/howto/howto_google_maps.asp">Google Maps</a><br>
+<a href="/howto/howto_js_rangeslider.asp">Range Sliders</a><br>
+<a href="/howto/howto_css_tooltip.asp">Tooltips</a><br>
+<a href="/howto/howto_js_slideshow.asp">Slideshow</a><br>
+<a href="/howto/howto_js_filter_lists.asp">Filter List</a><br>
+<a href="/howto/howto_js_sort_list.asp">Sort List</a><br>
+</div>
+</div>
+
+
+<div class="sidesection">
+<h4>SHARE</h4>
+<div class="w3-text-grey sharethis">
+<script>
+<!--
+try{
+loc=location.pathname;
+if (loc.toUpperCase().indexOf(".ASP")<0) loc=loc+"default.asp";
+txt='<a href="http://www.facebook.com/sharer.php?u=https://www.w3schools.com'+loc+'" target="_blank" title="Facebook"><span class="fa fa-facebook-square fa-2x"></span></a>';
+txt=txt+'<a href="https://twitter.com/home?status=Currently reading https://www.w3schools.com'+loc+'" target="_blank" title="Twitter"><span class="fa fa-twitter-square fa-2x"></span></a>';
+txt=txt+'<a href="https://plus.google.com/share?url=https://www.w3schools.com'+loc+'" target="_blank" title="Google+"><span class="fa fa-google-plus-square fa-2x"></span></a>';
+document.write(txt);
+} catch(e) {}
+//-->
+</script>
+<br><br>
+<a href="javascript:void(0);" onclick="clickFBLike()" title="Like W3Schools on Facebook">
+<span class="fa fa-thumbs-o-up fa-2x"></span></a>
+<div id="fblikeframe" class="w3-modal">
+<div class="w3-modal-content w3-padding-64 w3-animate-zoom" id="popupDIV"></div>
+</div>
+</div>
+</div>
+
+<div class="sidesection">
+<h4><a target="_blank" href="//www.w3schools.com/cert/default.asp">CERTIFICATES</a></h4>
+<p>
+<a href="/cert/cert_html.asp">HTML</a>,
+<a href="/cert/cert_css.asp">CSS</a>,
+<a href="/cert/cert_javascript.asp">JavaScript</a>,
+<a href="/cert/cert_php.asp">PHP</a>,
+<a href="/cert/cert_jquery.asp">jQuery</a>,
+<a href="/cert/cert_bootstrap.asp">Bootstrap</a> and
+<a href="/cert/cert_xml.asp">XML</a>.</p>
+<a target="_blank" href="//www.w3schools.com/cert/default.asp" class="w3-button w3-dark-grey" style="text-decoration:none">
+Read More &raquo;</a>
+</div>
+
+<div id="stickypos" class="sidesection" style="text-align:center;position:sticky;top:50px;">
+  <div id="stickyadcontainer">
+    <div style="position:relative;margin:auto;">
+
+      <!--<pre>sidebar_sticky, desktop: [120,600][160,600][300,600][300,250]</pre>-->
+      <div id="snhb-sidebar_sticky-0"></div>
+      <script>
+          if (Number(w3_getStyleValue(document.getElementById("main"), "height").replace("px", "")) > 2200) {
+            if (document.getElementById("snhb-mid_content-0")) {
+              snhb.queue.push(function(){  snhb.startAuction(["sidebar_sticky", "mid_content" ]); });
+            }
+            else {
+              snhb.queue.push(function(){  snhb.startAuction(["sidebar_sticky"]); });
+            }
+          }
+          else {
+              if (document.getElementById("snhb-mid_content-0")) {
+                snhb.queue.push(function(){  snhb.startAuction(["mid_content"]); });
+              }
+          }
+      </script>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener("scroll", fix_stickyad);
+  window.addEventListener("resize", fix_stickyad);
+</script>
+
+</div>
+</div>
+<div id="footer" class="footer w3-container w3-white">
+
+<hr>
+
+<div style="overflow:auto">
+  <div class="bottomad">
+    <!-- BottomMediumRectangle -->
+    <!--<pre>bottom_medium_rectangle, all: [970,250][300,250][336,280]</pre>-->
+    <div id="snhb-bottom_medium_rectangle-0" style="padding:0 10px 10px 0;float:left;width:auto;"></div>
+    <!-- RightBottomMediumRectangle -->
+    <!--<pre>right_bottom_medium_rectangle, desktop: [300,250][336,280]</pre>-->
+    <div id="snhb-right_bottom_medium_rectangle-0" style="padding:0 10px 10px 0;float:left;width:auto;"></div>
+  </div>
+</div>
+
+<hr>
+<div class="w3-row w3-center w3-small">
+<div class="w3-col l3 m3 s12">
+<a href="javascript:void(0);" onclick="displayError();return false" style="white-space:nowrap;">REPORT ERROR</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="javascript:void(0);" target="_blank" onclick="printPage();return false;">PRINT PAGE</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="/forum/default.asp" target="_blank">FORUM</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="/about/default.asp" target="_top">ABOUT</a>
+</div>
+</div>
+<hr>
+<div class="w3-light-grey w3-padding w3-center" id="err_form" style="display:none;position:relative">
+<span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright">&times;</span>
+<h2>Your Suggestion:</h2>
+<form>
+<div class="w3-section">
+<label for="err_email">Your E-mail:</label>
+<input class="w3-input" type="text" style="width:100%" id="err_email" name="err_email">
+</div>
+<div class="w3-section">
+<label for="err_email">Page address:</label>
+<input class="w3-input" type="text" style="width:100%" id="err_url" name="err_url" disabled="disabled">
+</div>
+<div class="w3-section">
+<label for="err_email">Description:</label>
+<textarea rows="10" class="w3-input" id="err_desc" name="err_desc" style="width:100%;"></textarea>
+</div>
+<div class="form-group">
+<button type="button" onclick="sendErr()">Submit</button>
+</div>
+<br>
+</form>
+</div>
+<div class="w3-container w3-light-grey w3-padding" id="err_sent" style="display:none;position:relative">
+<span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright">&times;</span>
+<h2>Thank You For Helping Us!</h2>
+<p>Your message has been sent to W3Schools.</p>
+</div>
+
+<div class="w3-row w3-center w3-small">
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 Tutorials</h4>
+<a href="/html/default.asp">HTML Tutorial</a><br>
+<a href="/css/default.asp">CSS Tutorial</a><br>
+<a href="/js/default.asp">JavaScript Tutorial</a><br>
+<a href="/howto/default.asp">How To Tutorial</a><br>
+<a href="/w3css/default.asp">W3.CSS Tutorial</a><br>
+<a href="/bootstrap/default.asp">Bootstrap Tutorial</a><br>
+<a href="/sql/default.asp">SQL Tutorial</a><br>
+<a href="/php/default.asp">PHP Tutorial</a><br>
+<a href="/jquery/default.asp">jQuery Tutorial</a><br>
+<a href="/python/default.asp">Python Tutorial</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 References</h4>
+<a href="/tags/default.asp">HTML Reference</a><br>
+<a href="/cssref/default.asp">CSS Reference</a><br>
+<a href="/jsref/default.asp">JavaScript Reference</a><br>
+<a href="/w3css/w3css_references.asp">W3.CSS Reference</a><br>
+<a href="/bootstrap/bootstrap_ref_all_classes.asp">Bootstrap Reference</a><br>
+<a href="/sql/sql_ref_keywords.asp">SQL Reference</a><br>
+<a href="/php/php_ref_overview.asp">PHP Reference</a><br>
+<a href="/colors/colors_names.asp">HTML Colors</a><br>
+<a href="/jquery/jquery_ref_overview.asp">jQuery Reference</a><br>
+<a href="/python/python_reference.asp">Python Reference</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 Examples</h4>
+<a href="/html/html_examples.asp">HTML Examples</a><br>
+<a href="/css/css_examples.asp">CSS Examples</a><br>
+<a href="/js/js_examples.asp">JavaScript Examples</a><br>
+<a href="/howto/default.asp">How To Examples</a><br>
+<a href="/w3css/w3css_examples.asp">W3.CSS Examples</a><br>
+<a href="/bootstrap/bootstrap_examples.asp">Bootstrap Examples</a><br>
+<a href="/php/php_examples.asp">PHP Examples</a><br>
+<a href="/jquery/jquery_examples.asp">jQuery Examples</a><br>
+<a href="/angular/angular_examples.asp">Angular Examples</a><br>
+<a href="/xml/xml_examples.asp">XML Examples</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Web Certificates</h4>
+<a href="/cert/default.asp">HTML Certificate</a><br>
+<a href="/cert/default.asp">CSS Certificate</a><br>
+<a href="/cert/default.asp">JavaScript Certificate</a><br>
+<a href="/cert/default.asp">jQuery Certificate</a><br>
+<a href="/cert/default.asp">PHP Certificate</a><br>
+<a href="/cert/default.asp">Bootstrap Certificate</a><br>
+<a href="/cert/default.asp">XML Certificate</a><br>
+</div>
+</div>
+</div>
+
+<hr>
+<div class="w3-center w3-small w3-opacity">
+W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding.
+Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.
+While using this site, you agree to have read and accepted our <a href="/about/about_copyright.asp">terms of use</a>,
+<a href="/about/about_privacy.asp">cookie and privacy policy</a>.
+<a href="/about/about_copyright.asp">Copyright 1999-2018</a> by Refsnes Data. All Rights Reserved.<br>
+ <a href="//www.w3schools.com/w3css/">Powered by W3.CSS</a>.<br><br>
+<a href="//www.w3schools.com">
+<img style="width:150px;height:28px;border:0" src="/images/w3schoolscom_gray.gif" alt="W3Schools.com"></a>
+</div>
+<br><br>
+</div>
+
+</div>
+<script src="/lib/w3schools_footer.js"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</body>
+</html>

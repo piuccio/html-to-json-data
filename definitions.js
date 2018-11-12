@@ -33,6 +33,12 @@ exports.number = select(asText, (text) => Number(text) || 0);
   exports[name] = select((node, base) => url.resolve(base, node.attr(name) || ''));
 });
 
+exports.input = select((node) => ({
+  type: node.attr('type'),
+  name: node.attr('name'),
+  value: node.attr('value'),
+}));
+
 /**
  * Logically group nested selectors.
  * Returns a function that can be used as is, or calling `.slice()`

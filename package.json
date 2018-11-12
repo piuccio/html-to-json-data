@@ -1,6 +1,6 @@
 {
   "name": "html-to-json-data",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "Extract data from an HTML page",
   "main": "index.js",
   "scripts": {

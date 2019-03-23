@@ -9,6 +9,9 @@
     "preproduction": "git checkout master && git pull",
     "production": "np --yolo"
   },
+  "engines": {
+    "node": ">= 8.0"
+  },
   "keywords": [
     "scraping"
   ],
@@ -18,9 +21,9 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "jest": "^23.6.0",
-    "jest-cli": "^23.6.0",
-    "np": "^3.0.4"
+    "jest": "^24.5.0",
+    "jest-cli": "^24.5.0",
+    "np": "^4.0.2"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2"

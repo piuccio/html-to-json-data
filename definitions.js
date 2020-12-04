@@ -6,6 +6,11 @@ const url = require('url');
 exports.text = select(asText);
 
 /**
+ * Extract the html content of a selected node
+ */
+exports.html = select(asHtml);
+
+/**
  * Extract the text of multiple nodes and guarantees results are unique
  */
 exports.uniq = select(asText).transform(
@@ -88,4 +93,8 @@ function select(...fns) {
 
 function asText(node) {
   return node.text().trim();
+}
+
+function asHtml(node) {
+  return node.html();
 }
